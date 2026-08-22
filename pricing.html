@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Тарифы — FlautCompany / ФлаутКомпани</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@600;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --bg:#0A0A0F; --surface:#12121A; --accent:#7B5CF0; --accent2:#A78BFA; --text:#F0EEF9; --muted:#8B8AA0; --border:rgba(123,92,240,0.18); --green:#22D3A0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.8; }
+  .topbar { background: rgba(10,10,15,0.9); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); padding: 16px 5%; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
+  .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; font-weight: 700; text-decoration: none; color: var(--text); }
+  .logo span { color: var(--accent2); }
+  .logo-rus { font-family: 'Inter', sans-serif; font-size: 0.75rem; color: var(--muted); letter-spacing: 0.05em; margin-left: 8px; }
+  .back { font-size: .85rem; color: var(--muted); text-decoration: none; }
+  .back:hover { color: var(--accent2); }
+  .doc-wrap { max-width: 900px; margin: 0 auto; padding: 60px 5% 100px; }
+  .doc-header { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+  .doc-type { font-size: .75rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--accent2); margin-bottom: 12px; }
+  h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; margin-bottom: 16px; }
+  .doc-meta { font-size: .85rem; color: var(--muted); }
+  h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--accent2); margin: 40px 0 16px; }
+  h3 { font-size: 1rem; font-weight: 700; margin: 20px 0 10px; }
+  p { margin-bottom: 14px; color: #d0cee8; }
+  ul, ol { padding-left: 24px; margin-bottom: 14px; }
+  li { margin-bottom: 8px; color: #d0cee8; }
+  .plan-card {
+    border: 1px solid var(--border); border-radius: 20px; margin: 32px 0; overflow: hidden;
+    transition: border-color .2s;
+  }
+  .plan-card:hover { border-color: var(--accent); }
+  .plan-card.featured { border-color: var(--accent); box-shadow: 0 0 30px rgba(123,92,240,0.12); }
+  .plan-header {
+    background: var(--surface); padding: 28px 32px;
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 20px;
+    flex-wrap: wrap;
+  }
+  .plan-header.featured { background: linear-gradient(135deg, rgba(123,92,240,0.15), var(--surface)); }
+  .plan-name { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; font-weight: 700; }
+  .plan-tagline { font-size: .88rem; color: var(--muted); margin-top: 4px; }
+  .plan-prices { text-align: right; }
+  .plan-monthly { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; }
+  .plan-monthly span { font-size: 1rem; font-weight: 400; color: var(--muted); }
+  .plan-periods { margin-top: 8px; }
+  .plan-periods div { font-size: .82rem; color: var(--muted); }
+  .plan-badge { background: var(--accent); color: #fff; font-size: .75rem; font-weight: 700; padding: 3px 12px; border-radius: 50px; }
+  .plan-body { padding: 28px 32px; }
+  .plan-services { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .service-block { background: rgba(255,255,255,0.03); border-radius: 12px; padding: 16px; }
+  .service-block h4 { font-size: .88rem; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .service-block ul { padding-left: 0; list-style: none; }
+  .service-block li { font-size: .82rem; color: var(--muted); padding: 4px 0; display: flex; gap: 8px; }
+  .service-block li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+  .plan-btn {
+    display: block; text-align: center; margin: 24px 0 0; padding: 14px;
+    border-radius: 12px; font-weight: 700; text-decoration: none; transition: all .2s;
+    background: rgba(123,92,240,0.12); border: 1px solid var(--accent); color: var(--accent2);
+    font-size: .95rem;
+  }
+  .plan-btn:hover { background: var(--accent); color: #fff; }
+  .comparison { overflow-x: auto; margin: 32px 0; }
+  table { width: 100%; border-collapse: collapse; min-width: 560px; }
+  .tbl-header { font-family: 'Space Grotesk', sans-serif; }
+  th { background: rgba(123,92,240,0.12); padding: 14px 16px; font-weight: 700; font-size: .9rem; }
+  th:first-child { text-align: left; }
+  td { padding: 11px 16px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: .88rem; color: #d0cee8; text-align: center; }
+  td:first-child { text-align: left; }
+  tr:last-child td { border-bottom: none; }
+  .check-y { color: var(--green); font-size: 1rem; font-weight: 700; }
+  .check-n { color: var(--muted); }
+  .tbl-section td { background: rgba(123,92,240,0.06); font-weight: 700; font-size: .82rem; color: var(--accent2); }
+  .steps { counter-reset: step; margin: 20px 0; }
+  .step { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    width: 32px; height: 32px; border-radius: 50%; background: rgba(123,92,240,0.2);
+    border: 1px solid var(--accent); display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .9rem;
+    color: var(--accent2); flex-shrink: 0;
+  }
+  .step-body h4 { font-size: .9rem; font-weight: 700; margin-bottom: 4px; }
+  .step-body p { font-size: .85rem; color: var(--muted); margin: 0; }
+  .faq-item { border-bottom: 1px solid rgba(255,255,255,0.06); padding: 18px 0; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q { font-weight: 700; font-size: .95rem; margin-bottom: 8px; }
+  .faq-a { font-size: .88rem; color: var(--muted); }
+  .soon-note {
+    display: inline-block; background: rgba(123,92,240,0.15); border: 1px solid var(--accent);
+    border-radius: 6px; padding: 2px 10px; font-size: .75rem; font-weight: 700;
+    color: var(--accent2); margin-left: 6px; vertical-align: middle;
+  }
+  @media (max-width: 600px) {
+    .plan-header { flex-direction: column; }
+    .plan-prices { text-align: left; }
+    .plan-services { grid-template-columns: 1fr; }
+    .plan-body { padding: 20px; }
+    .plan-header { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div>
+    <a href="index.html" class="logo">Flaut<span>Company</span></a>
+    <span class="logo-rus">ФлаутКомпани</span>
+  </div>
+  <a href="index.html" class="back">← Назад на сайт</a>
+</div>
+<div class="doc-wrap">
+  <div class="doc-header">
+    <div class="doc-type">Юридический документ</div>
+    <h1>Описание тарифных планов FlautCompany / ФлаутКомпани</h1>
+    <p class="doc-meta">Действует с 22 августа 2025 г. Цены указаны в рублях РФ. Платежи обрабатываются через Lava.top.</p>
+  </div>
+
+  <!-- ПЛАН: НА ЛАЙТЕ -->
+  <div class="plan-card">
+    <div class="plan-header">
+      <div>
+        <div class="plan-name">📁 НА ЛАЙТЕ — 45 ГБ</div>
+        <div class="plan-tagline">Базовый набор для тех, кто только начинает</div>
+      </div>
+      <div class="plan-prices">
+        <div class="plan-monthly">299₽<span>/мес</span></div>
+        <div class="plan-periods">
+          <div>3 месяца — 897 ₽</div>
+          <div>6 месяцев — 1 794 ₽</div>
+          <div>12 месяцев — 3 588 ₽</div>
+        </div>
+      </div>
+    </div>
+    <div class="plan-body">
+      <div class="plan-services">
+        <div class="service-block">
+          <h4>🎸 BandMate Match <span class="soon-note">СКОРО</span></h4>
+          <ul>
+            <li>Поиск партнёров и команд</li>
+            <li>Анкета с компетенциями</li>
+            <li>Базовый доступ (при запуске)</li>
+          </ul>
+        </div>
+        <div class="service-block">
+          <h4>🤖 НейроFlaut</h4>
+          <ul>
+            <li>Ограниченное число запросов в день</li>
+            <li>Генерация текстов</li>
+            <li>Собственный ИИ FlautCompany</li>
+          </ul>
+        </div>
+        <div class="service-block">
+          <h4>☁️ Flaut Cloud</h4>
+          <ul>
+            <li>45 ГБ хранилища</li>
+            <li>Высокая скорость загрузки</li>
+            <li>Прямые ссылки на файлы</li>
+          </ul>
+        </div>
+        <div class="service-block">
+          <h4>💳 Flaut Pay</h4>
+          <ul>
+            <li>Полный доступ</li>
+            <li>Управление подпиской</li>
+            <li>История операций</li>
+          </ul>
+        </div>
+      </div>
+      <a href="https://t.me/flautpay_bot" class="plan-btn" target="_blank">Подключить «НА ЛАЙТЕ» →</a>
+    </div>
+  </div>
+
+  <!-- ПЛАН: В ПЛЮСЕ -->
+  <div class="plan-card featured">
+    <div class="plan-header featured">
+      <div>
+        <div class="plan-name">💡 В ПЛЮСЕ — 1 ТБ &nbsp;<span class="plan-badge">Самый популярный</span></div>
+        <div class="plan-tagline">Для активных пользователей: безлимитный ИИ и расширенное хранилище</div>
+      </div>
+      <div class="plan-prices">
+        <div class="plan-monthly">399₽<span>/мес</span></div>
+        <div class="plan-periods">
+          <div>3 месяца — 1 197 ₽</div>
+          <div>6 месяцев — 2 394 ₽</div>
+          <div>12 месяцев — 4 788 ₽</div>
+        </div>
+      </div>
+    </div>
+    <div class="plan-body">
+      <div class="plan-services">
+        <div class="service-block">
+          <h4>🎸 BandMate Match <span class="soon-note">СКОРО</span></h4>
+          <ul>
+            <li>Всё из тарифа «НА ЛАЙТЕ»</li>
+            <li>Расширенные возможности (при запуске)</li>
+          </ul>
+        </div>
+        <div class="service-block">
+          <h4>🤖 НейроFlaut</h4>
+          <ul>
+            <li>Безлимитные запросы</li>
+            <li>Генерация текстов любой сложности</li>
+            <li>Генерация идей и аналитика</li>
+            <li>Собственный ИИ FlautCompany</li>
+          </ul>
+        </div>
+        <div class="service-block">
+          <h4>☁️ Flaut Cloud</h4>
+          <ul>
+            <li>1 ТБ хранилища</li>
+            <li>Высокая скорость загрузки</li>
+            <li>Прямые ссылки на файлы</li>
+          </ul>
+        </div>
+        <div class="service-block">
+          <h4>⭐ В ПЛЮСЕ эксклюзив</h4>
+          <ul>
+            <li>Приоритетная техническая поддержка</li>
+            <li>Быстрый ответ оператора</li>
+          </ul>
+        </div>
+      </div>
+      <a href="https://t.me/flautpay_bot" class="plan-btn" target="_blank">Подключить «В ПЛЮСЕ» →</a>
+    </div>
+  </div>
+
+  <!-- ПЛАН: НА МАКСИМАЛКЕ -->
+  <div class="plan-card">
+    <div class="plan-header">
+      <div>
+        <div class="plan-name">🔥 НА МАКСИМАЛКЕ — БЕЗЛИМИТ</div>
+        <div class="plan-tagline">Максимальный функционал: безлимитное хранилище, эксклюзивный доступ</div>
+      </div>
+      <div class="plan-prices">
+        <div class="plan-monthly">799₽<span>/мес</span></div>
+        <div class="plan-periods">
+          <div>3 месяца — 2 397 ₽</div>
+          <div>6 месяцев — 4 794 ₽</div>
+          <div>12 месяцев — 9 588 ₽</div>
+        </div>
+      </div>
+    </div>
+    <div class="plan-body">
+      <div class="plan-services">
+        <div class="service-block">
+          <h4>🤖 НейроFlaut</h4>
+          <ul>
+            <li>Максимальные возможности ИИ</li>
+            <li>Безлимит запросов</li>
+            <li>Приоритетная обработка</li>
+            <li>Собственный ИИ FlautCompany</li>
+          </ul>
+        </div>
+        <div class="service-block">
+          <h4>☁️ Flaut Cloud</h4>
+          <ul>
+            <li>Безлимитное хранилище</li>
+            <li>Максимальная скорость загрузки</li>
+            <li>Прямые ссылки</li>
+          </ul>
+        </div>
+        <div class="service-block">
+          <h4>⭐ Эксклюзив «МАКСИМАЛКЕ»</h4>
+          <ul>
+            <li>Закрытый чат с командой разработчиков</li>
+            <li>Ранний доступ к бета-функциям</li>
+            <li>Приоритетная поддержка</li>
+          </ul>
+        </div>
+        <div class="service-block">
+          <h4>🎸 BandMate Match <span class="soon-note">СКОРО</span></h4>
+          <ul>
+            <li>Максимальный приоритет в поиске</li>
+            <li>Все возможности при запуске</li>
+          </ul>
+        </div>
+      </div>
+      <a href="https://t.me/flautpay_bot" class="plan-btn" target="_blank">Подключить «НА МАКСИМАЛКЕ» →</a>
+    </div>
+  </div>
+
+  <!-- COMPARISON TABLE -->
+  <h2>Сравнение тарифов</h2>
+  <div class="comparison">
+    <table>
+      <tr class="tbl-header">
+        <th>Функция</th>
+        <th>НА ЛАЙТЕ 299₽</th>
+        <th>В ПЛЮСЕ 399₽</th>
+        <th>НА МАКСИМАЛКЕ 799₽</th>
+      </tr>
+      <tr class="tbl-section"><td colspan="4">🎸 BandMate Match (скоро)</td></tr>
+      <tr><td>Доступ при запуске</td><td class="check-y">✓</td><td class="check-y">✓</td><td class="check-y">✓</td></tr>
+      <tr><td>Расширенный поиск</td><td class="check-n">—</td><td class="check-y">✓</td><td>Максимальный</td></tr>
+      <tr class="tbl-section"><td colspan="4">🤖 НейроFlaut</td></tr>
+      <tr><td>Запросы в день</td><td>Ограничено</td><td>Безлимит</td><td>Безлимит</td></tr>
+      <tr><td>Генерация текстов</td><td class="check-y">✓</td><td class="check-y">✓</td><td class="check-y">✓</td></tr>
+      <tr><td>Максимальные возможности ИИ</td><td class="check-n">—</td><td class="check-n">—</td><td class="check-y">✓</td></tr>
+      <tr class="tbl-section"><td colspan="4">☁️ Flaut Cloud</td></tr>
+      <tr><td>Объём хранилища</td><td>45 ГБ</td><td>1 ТБ</td><td>Безлимит</td></tr>
+      <tr><td>Высокая скорость</td><td class="check-y">✓</td><td class="check-y">✓</td><td>Максимальная</td></tr>
+      <tr><td>Прямые ссылки</td><td class="check-y">✓</td><td class="check-y">✓</td><td class="check-y">✓</td></tr>
+      <tr class="tbl-section"><td colspan="4">💳 Flaut Pay</td></tr>
+      <tr><td>Полный доступ</td><td class="check-y">✓</td><td class="check-y">✓</td><td class="check-y">✓</td></tr>
+      <tr class="tbl-section"><td colspan="4">⭐ Эксклюзив</td></tr>
+      <tr><td>Приоритетная поддержка</td><td class="check-n">—</td><td class="check-y">✓</td><td class="check-y">✓</td></tr>
+      <tr><td>Закрытый чат с командой</td><td class="check-n">—</td><td class="check-n">—</td><td class="check-y">✓</td></tr>
+      <tr><td>Ранний доступ к бета</td><td class="check-n">—</td><td class="check-n">—</td><td class="check-y">✓</td></tr>
+    </table>
+  </div>
+
+  <!-- PAYMENT STEPS -->
+  <h2>Порядок оплаты (пошагово)</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h4>Откройте бот Flaut Pay</h4>
+        <p>Перейдите в Telegram по ссылке <a href="https://t.me/flautpay_bot" target="_blank" style="color:var(--accent2);">@flautpay_bot</a> и нажмите «Старт».</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h4>Выберите тарифный план</h4>
+        <p>Нажмите «Подписка» → выберите «НА ЛАЙТЕ», «В ПЛЮСЕ» или «НА МАКСИМАЛКЕ». Выберите срок: 1, 3, 6 или 12 месяцев.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h4>Перейдите к оплате через Lava.top</h4>
+        <p>Бот сформирует ссылку на платёжную страницу Lava.top. Перейдите по ней и выберите удобный способ оплаты: банковская карта, СБП, электронный кошелёк.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h4>Подтвердите платёж</h4>
+        <p>Введите данные карты или подтвердите оплату в приложении банка. Платёж защищён шифрованием Lava.top.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <h4>Получите подтверждение</h4>
+        <p>После успешной оплаты Flaut Pay отправит уведомление в Telegram. Доступ ко всем оплаченным сервисам активируется автоматически в течение 1–2 минут.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <h4>Проверьте статус подписки</h4>
+        <p>Откройте @flautpay_bot → «Мой аккаунт» → «Статус подписки». Там отображается активный тариф, дата следующего списания и история платежей.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <h2>Часто задаваемые вопросы (FAQ)</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">Можно ли сменить тариф в середине оплаченного периода?</div>
+    <div class="faq-a">Да. При апгрейде (переходе на более дорогой план) остаток оплаченного периода пересчитывается пропорционально. При даунгрейде новый тариф вступает в силу с начала следующего расчётного периода.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Что происходит после окончания подписки?</div>
+    <div class="faq-a">Доступ к платным функциям прекращается, аккаунт переходит на бесплатный уровень (ограниченные запросы в НейроFlaut, 2 ГБ в Flaut Cloud). Все данные сохраняются. Файлы в Cloud свыше бесплатного лимита временно блокируются (не удаляются) до возобновления подписки.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Как отменить автопродление?</div>
+    <div class="faq-a">Откройте @flautpay_bot → «Моя подписка» → «Отменить автопродление». Отмена вступает в силу немедленно. Доступ к оплаченным функциям сохраняется до конца текущего расчётного периода.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Какие способы оплаты доступны?</div>
+    <div class="faq-a">Через платёжный сервис Lava.top принимаются: банковские карты Visa, Mastercard, МИР; СБП (Система Быстрых Платежей); электронные кошельки; онлайн-банкинг. Актуальный список способов оплаты отображается на странице Lava.top при переходе к оплате.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Можно ли получить возврат?</div>
+    <div class="faq-a">Да, в течение 14 дней с момента оплаты, если услуга фактически не была оказана по вине Продавца. Подробнее — в разделе 5 Публичной оферты. Обращайтесь на <a href="mailto:support@flaut.ru" style="color:var(--accent2);">support@flaut.ru</a>.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">НейроFlaut — это ChatGPT?</div>
+    <div class="faq-a">Нет. НейроFlaut работает на базе собственной ИИ-разработки FlautCompany. Мы не используем сторонние API и не зависим от ChatGPT или иных внешних сервисов.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Есть ли пробный период?</div>
+    <div class="faq-a">Все сервисы FlautCompany доступны бесплатно с ограниченным функционалом — это де-факто бессрочный пробный период. Перейдите на платный тариф, когда почувствуете, что готовы.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Когда заработает BandMate Match?</div>
+    <div class="faq-a">BandMate Match находится в активной разработке. Следить за анонсом запуска можно в канале <a href="https://t.me/flautcompany" target="_blank" style="color:var(--accent2);">t.me/flautcompany</a>. При подключении подписки сейчас доступ к BandMate активируется автоматически после запуска.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Кто обрабатывает мои платежи?</div>
+    <div class="faq-a">Платежи обрабатываются через Lava.top (LAVALANE LTD, Кипр, HE 387079). Все данные передаются по защищённому каналу. Подробнее — в <a href="oferta.html" style="color:var(--accent2);">Публичной оферте</a>.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Что такое «собственный ИИ» в НейроFlaut?</div>
+    <div class="faq-a">НейроFlaut использует собственную нейросетевую модель, разработанную командой FlautCompany. Модель обучена на публичных данных, не использует персональные данные Пользователей для обучения и не передаёт запросы третьим лицам. Это обеспечивает полную конфиденциальность ваших запросов.</div>
+  </div>
+</div>
+</body>
+</html>

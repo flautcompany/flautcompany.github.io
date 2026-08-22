@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Согласие на обработку персональных данных — FlautCompany (ФлаутКомпани)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@600;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --bg:#0A0A0F; --surface:#12121A; --accent:#7B5CF0; --accent2:#A78BFA; --text:#F0EEF9; --muted:#8B8AA0; --border:rgba(123,92,240,0.18); --green:#22D3A0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.8; }
+  .topbar { background: rgba(10,10,15,0.9); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); padding: 16px 5%; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
+  .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; font-weight: 700; text-decoration: none; color: var(--text); }
+  .logo span { color: var(--accent2); }
+  .logo-rus { font-family: 'Inter', sans-serif; font-size: 0.75rem; color: var(--muted); letter-spacing: 0.05em; margin-left: 8px; }
+  .back { font-size: .85rem; color: var(--muted); text-decoration: none; }
+  .back:hover { color: var(--accent2); }
+  .doc-wrap { max-width: 820px; margin: 0 auto; padding: 60px 5% 100px; }
+  .doc-header { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+  .doc-type { font-size: .75rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--accent2); margin-bottom: 12px; }
+  h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 700; margin-bottom: 16px; }
+  .doc-meta { font-size: .85rem; color: var(--muted); }
+  h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--accent2); margin: 40px 0 16px; }
+  h3 { font-size: 1rem; font-weight: 600; margin: 24px 0 10px; }
+  p { margin-bottom: 14px; color: #d0cee8; }
+  ul, ol { padding-left: 24px; margin-bottom: 14px; }
+  li { margin-bottom: 8px; color: #d0cee8; }
+  .highlight { background: rgba(123,92,240,0.08); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 20px 0; }
+  .consent-block {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; margin: 32px 0;
+  }
+  .consent-block h3 { color: var(--accent2); margin-top: 0; }
+  .check-row {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .check-row:last-child { border-bottom: none; }
+  .check-box {
+    width: 20px; height: 20px; border: 2px solid var(--accent); border-radius: 5px;
+    flex-shrink: 0; margin-top: 3px; background: rgba(123,92,240,0.1);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .check-box.checked { background: var(--accent); }
+  .check-box.checked::after { content: '✓'; color: #fff; font-size: .8rem; }
+  .check-label { font-size: .9rem; color: #d0cee8; }
+  .check-label strong { color: var(--text); }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+  .field label { display: block; font-size: .8rem; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .05em; }
+  .field-val { background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; font-size: .9rem; color: var(--muted); font-style: italic; }
+  .signature-block { margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border); }
+  .sig-row { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 20px; }
+  .sig-party h4 { font-size: .85rem; font-weight: 700; color: var(--accent2); text-transform: uppercase; margin-bottom: 12px; }
+  .sig-line { border-bottom: 1px solid rgba(255,255,255,0.2); height: 36px; margin-bottom: 6px; }
+  .sig-caption { font-size: .75rem; color: var(--muted); }
+  .revoke-note { background: rgba(34,211,160,0.08); border: 1px solid rgba(34,211,160,0.2); border-radius: 10px; padding: 16px 20px; margin: 24px 0; }
+  .revoke-note p { color: var(--green); margin: 0; font-size: .88rem; }
+  table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+  th { background: rgba(123,92,240,0.15); padding: 12px 16px; text-align: left; font-size: .85rem; font-weight: 600; }
+  td { padding: 11px 16px; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: .88rem; color: #d0cee8; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  @media (max-width: 600px) {
+    .field-row { grid-template-columns: 1fr; }
+    .sig-row { grid-template-columns: 1fr; }
+    .consent-block { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div>
+    <a href="index.html" class="logo">Flaut<span>Company</span></a>
+    <span class="logo-rus">ФлаутКомпани</span>
+  </div>
+  <a href="index.html" class="back">← Назад на сайт</a>
+</div>
+<div class="doc-wrap">
+  <div class="doc-header">
+    <div class="doc-type">Юридический документ</div>
+    <h1>Согласие на обработку персональных данных в рамках использования сервисов FlautCompany (ФлаутКомпани)</h1>
+    <p class="doc-meta">Принимается при первичной регистрации в любом сервисе экосистемы FlautCompany | Версия 2.0 от 22.08.2025</p>
+  </div>
+
+  <h2>1. Стороны</h2>
+  <p>Настоящее Согласие предоставляется субъектом персональных данных (далее — «Субъект», «Пользователь») оператору персональных данных — физическому лицу, самозанятому Стекольникову Алексею Вячеславовичу (ИНН 503818801200), осуществляющему деятельность под коммерческим обозначением FlautCompany / ФлаутКомпани (далее — «Оператор»).</p>
+
+  <div class="field-row">
+    <div class="field">
+      <label>Субъект персональных данных</label>
+      <div class="field-val">Заполняется при регистрации (Telegram First Name / Last Name)</div>
+    </div>
+    <div class="field">
+      <label>Telegram Username</label>
+      <div class="field-val">Определяется автоматически (@username)</div>
+    </div>
+    <div class="field">
+      <label>Telegram ID</label>
+      <div class="field-val">Определяется автоматически (числовой ID)</div>
+    </div>
+    <div class="field">
+      <label>Дата выдачи согласия</label>
+      <div class="field-val">Дата первого запуска бота (фиксируется системой)</div>
+    </div>
+  </div>
+
+  <h2>2. Перечень персональных данных, передаваемых в обработку</h2>
+  <p>2.1. Субъект даёт согласие на обработку следующих персональных данных:</p>
+  <table>
+    <tr><th>№</th><th>Категория данных</th><th>Конкретный состав</th></tr>
+    <tr><td>1</td><td>Идентификационные данные в Telegram</td><td>Telegram ID (уникальный числовой идентификатор), отображаемое имя (First Name, Last Name), username (@логин)</td></tr>
+    <tr><td>2</td><td>Профильные данные</td><td>Город, деятельность, навыки, краткая биография, фотография профиля (при заполнении в BandMate Match)</td></tr>
+    <tr><td>3</td><td>Контактные данные</td><td>Адрес электронной почты (при самостоятельном указании в целях получения чеков)</td></tr>
+    <tr><td>4</td><td>Платёжные реквизиты</td><td>НЕ обрабатываются Оператором напрямую. Передаются в платёжный сервис Lava.top. Оператор получает только подтверждение факта и суммы транзакции.</td></tr>
+    <tr><td>5</td><td>Технические данные</td><td>IP-адрес, тип устройства, дата и время активности</td></tr>
+    <tr><td>6</td><td>Данные взаимодействия</td><td>История запросов к НейроFlaut (анонимизируется при необходимости); история лайков в BandMate Match (после запуска сервиса); метаданные файлов в Flaut Cloud (имя, размер, дата загрузки)</td></tr>
+  </table>
+
+  <h2>3. Цели обработки персональных данных</h2>
+  <p>3.1. Субъект даёт согласие на обработку перечисленных данных в следующих целях:</p>
+
+  <div class="consent-block">
+    <h3>Обязательные цели (для работы сервисов)</h3>
+    <div class="check-row">
+      <div class="check-box checked"></div>
+      <div class="check-label"><strong>Идентификация и авторизация</strong> — подтверждение личности Пользователя при входе в сервисы FlautCompany через Telegram-аккаунт.</div>
+    </div>
+    <div class="check-row">
+      <div class="check-box checked"></div>
+      <div class="check-label"><strong>Оказание услуг экосистемы</strong> — предоставление доступа к функционалу BandMate Match (после запуска), НейроFlaut, Flaut Cloud и Flaut Pay в соответствии с выбранным тарифным планом.</div>
+    </div>
+    <div class="check-row">
+      <div class="check-box checked"></div>
+      <div class="check-label"><strong>Обработка платежей</strong> — передача минимально необходимых данных в платёжный сервис Lava.top для проведения транзакций.</div>
+    </div>
+    <div class="check-row">
+      <div class="check-box checked"></div>
+      <div class="check-label"><strong>Техническая поддержка</strong> — использование данных для диагностики и устранения технических проблем при обращении Пользователя в службу поддержки.</div>
+    </div>
+    <div class="check-row">
+      <div class="check-box checked"></div>
+      <div class="check-label"><strong>Уведомления об операционных событиях</strong> — push-уведомления в Telegram о статусе подписки, предстоящих и совершённых списаниях, технических работах.</div>
+    </div>
+  </div>
+
+  <div class="consent-block">
+    <h3>Дополнительные цели (с возможностью отказа)</h3>
+    <div class="check-row">
+      <div class="check-box checked"></div>
+      <div class="check-label"><strong>Маркетинговые уведомления</strong> — push-уведомления и сообщения в Telegram о новостях экосистемы FlautCompany, обновлениях продуктов, специальных предложениях и акциях. <em>Отзывается командой /unsubscribe в любом боте или через поддержку.</em></div>
+    </div>
+    <div class="check-row">
+      <div class="check-box checked"></div>
+      <div class="check-label"><strong>Персонализация</strong> — использование данных о предпочтениях для улучшения рекомендаций в BandMate Match (после запуска) и качества ответов НейроFlaut. <em>Отзывается через обращение в поддержку.</em></div>
+    </div>
+    <div class="check-row">
+      <div class="check-box checked"></div>
+      <div class="check-label"><strong>Улучшение сервисов</strong> — анализ обезличенной (агрегированной) статистики использования в целях совершенствования функционала. Персональная идентификация при этом не производится.</div>
+    </div>
+  </div>
+
+  <h2>4. Согласие на уведомления</h2>
+  <p>4.1. Субъект даёт согласие на получение от FlautCompany следующих видов уведомлений через Telegram-бота:</p>
+  <ul>
+    <li><strong>Транзакционные уведомления</strong> (обязательные): подтверждение оплаты, предстоящие списания, подтверждение отмены подписки, уведомления о технических работах, затрагивающих оплаченные услуги.</li>
+    <li><strong>Маркетинговые уведомления</strong> (по желанию): новости экосистемы, анонсы новых продуктов и функций, специальные предложения и акции, приглашения к бета-тестированию новых функций.</li>
+  </ul>
+  <p>4.2. Маркетинговые уведомления направляются не чаще 3 (трёх) раз в неделю. Транзакционные уведомления — при наступлении соответствующего события без ограничений по частоте.</p>
+
+  <h2>5. Третьи лица, которым передаются данные</h2>
+  <p>5.1. Субъект выражает информированное согласие на передачу данных следующим третьим лицам:</p>
+  <ul>
+    <li><strong>Lava.top (LAVALANE LTD, Кипр, HE 387079)</strong> — для обработки платёжных транзакций.</li>
+    <li><strong>Провайдеры облачной инфраструктуры</strong> — для хранения и обработки данных в зашифрованном виде на территории РФ.</li>
+  </ul>
+  <p>5.2. Оператор не передаёт персональные данные Пользователей иным третьим лицам, за исключением случаев, прямо предусмотренных законодательством Российской Федерации.</p>
+
+  <h2>6. Срок действия согласия</h2>
+  <p>6.1. Настоящее Согласие предоставляется на неопределённый срок и действует до момента его отзыва Субъектом.</p>
+  <p>6.2. Согласие считается отозванным с момента:</p>
+  <ul>
+    <li>выполнения команды <code>/delete_data</code> в боте Flaut Pay — для полного удаления аккаунта и всех данных;</li>
+    <li>направления письменного заявления об отзыве согласия на email <a href="mailto:support@flaut.ru" style="color:var(--accent2);">support@flaut.ru</a>.</li>
+  </ul>
+  <div class="revoke-note">
+    <p>⚠️ Отзыв согласия на обработку персональных данных влечёт прекращение возможности использования сервисов FlautCompany, поскольку обработка данных необходима для их функционирования. Денежные средства за неиспользованный период подписки возвращаются в соответствии с разделом 5 Публичной оферты.</p>
+  </div>
+  <p>6.3. Отзыв согласия не влияет на законность обработки данных, осуществлённой на основании согласия до его отзыва.</p>
+  <p>6.4. После отзыва согласия данные Субъекта уничтожаются в течение 30 (тридцати) дней, за исключением данных, хранение которых обязательно по требованиям законодательства (данные о транзакциях — в течение срока, установленного налоговым законодательством).</p>
+
+  <h2>7. Подтверждение ознакомления с документами</h2>
+  <div class="consent-block">
+    <div class="check-row">
+      <div class="check-box checked"></div>
+      <div class="check-label">Я ознакомлен(а) с <a href="oferta.html" style="color:var(--accent2);">Публичной офертой FlautCompany</a> и принимаю её условия в полном объёме.</div>
+    </div>
+    <div class="check-row">
+      <div class="check-box checked"></div>
+      <div class="check-label">Я ознакомлен(а) с <a href="privacy.html" style="color:var(--accent2);">Политикой конфиденциальности FlautCompany</a> и принимаю её условия.</div>
+    </div>
+    <div class="check-row">
+      <div class="check-box checked"></div>
+      <div class="check-label">Я подтверждаю, что достиг(ла) возраста 16 лет и вправе самостоятельно давать согласие на обработку персональных данных.</div>
+    </div>
+    <div class="check-row">
+      <div class="check-box checked"></div>
+      <div class="check-label">Я понимаю, что могу отозвать настоящее Согласие в любой момент способами, указанными в разделе 6 настоящего документа.</div>
+    </div>
+    <div class="check-row">
+      <div class="check-box checked"></div>
+      <div class="check-label">Я понимаю, что отзыв Согласия повлечёт прекращение возможности использования сервисов FlautCompany.</div>
+    </div>
+  </div>
+
+  <div class="signature-block">
+    <h2 style="margin-top:0;">8. Подпись</h2>
+    <p>Настоящее Согласие принимается Субъектом в электронной форме путём активации соответствующего чекбокса при первичной регистрации в сервисах FlautCompany (нажатие кнопки «Принять» / «Согласен» в Telegram-боте). Электронная форма акцепта имеет юридическую силу в соответствии со ст. 6 Федерального закона от 06.04.2011 № 63-ФЗ «Об электронной подписи».</p>
+    <div class="sig-row">
+      <div class="sig-party">
+        <h4>Субъект персональных данных</h4>
+        <div class="sig-line"></div>
+        <div class="sig-caption">Telegram-аккаунт / ФИО (заполняется автоматически системой)</div>
+        <div class="sig-line" style="margin-top:16px;"></div>
+        <div class="sig-caption">Дата (фиксируется системой автоматически)</div>
+      </div>
+      <div class="sig-party">
+        <h4>Оператор</h4>
+        <p style="font-size:.88rem;margin-bottom:6px;">Стекольников Алексей Вячеславович</p>
+        <p style="font-size:.85rem;color:var(--muted);">Самозанятый, ИНН 503818801200</p>
+        <p style="font-size:.85rem;color:var(--muted);">FlautCompany / ФлаутКомпани</p>
+        <p style="font-size:.85rem;color:var(--muted);"><a href="mailto:support@flaut.ru" style="color:var(--accent2);">support@flaut.ru</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
