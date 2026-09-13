@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="flaut_icon.png">
+<title>.fsecurity — криптографический слой FlautCompany</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Unbounded:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #07070D;
+  --bg-soft: #0B0B14;
+  --bg-elev: #11111D;
+  --text: #F2EFFA;
+  --text-dim: #A5A0C0;
+  --text-faint: #5D5878;
+  --violet: #6D28D9;
+  --violet-soft: #8B5CF6;
+  --violet-pale: #B8A5F5;
+  --rose-soft: #C084FC;
+  --rose-pale: #E0C4FE;
+  --green: #6EE7B7;
+  --red: #FCA5A5;
+  --glass-bg: rgba(22, 22, 42, 0.45);
+  --glass-bg-strong: rgba(26, 26, 48, 0.62);
+  --glass-border: rgba(180, 160, 240, 0.14);
+  --glass-border-hi: rgba(200, 180, 255, 0.28);
+  --glass-highlight: rgba(255, 255, 255, 0.06);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --glass-blur: blur(24px) saturate(140%);
+  --ff-display: 'Unbounded', sans-serif;
+  --ff-body: 'Manrope', sans-serif;
+  --ff-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--ff-body);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(109, 40, 217, 0.16) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(192, 132, 252, 0.09) 0%, transparent 45%);
+}
+main, nav, footer { position: relative; z-index: 1; }
+::selection { background: var(--violet); color: #fff; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--violet); border-radius: 3px; }
+
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 800;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid transparent;
+  transition: all 0.4s;
+}
+.nav.scrolled {
+  background: rgba(11, 11, 20, 0.55);
+  backdrop-filter: blur(28px) saturate(160%);
+  -webkit-backdrop-filter: blur(28px) saturate(160%);
+  border-bottom-color: var(--glass-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), inset 0 1px 0 var(--glass-highlight);
+}
+.nav-inner {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--ff-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  text-decoration: none;
+}
+.nav-logo span {
+  background: linear-gradient(135deg, var(--violet-pale), var(--rose-soft));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.nav-back {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.nav-back:hover { color: var(--violet-pale); }
+
+.hero {
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 160px 40px 100px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.hero-bg { position: absolute; inset: 0; pointer-events: none; }
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  width: 1000px; height: 1000px;
+  top: -350px;
+  left: calc(50% - 500px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(109, 40, 217, 0.24) 0%, transparent 60%);
+  animation: drift 18s ease-in-out infinite;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  width: 700px; height: 700px;
+  bottom: -250px;
+  right: -150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(192, 132, 252, 0.1) 0%, transparent 62%);
+  animation: drift 22s ease-in-out infinite reverse;
+}
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(30px, -40px) scale(1.05); }
+}
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(109, 40, 217, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(109, 40, 217, 0.035) 1px, transparent 1px);
+  background-size: 88px 88px;
+  mask-image: radial-gradient(ellipse 70% 65% at 50% 45%, #000 25%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 65% at 50% 45%, #000 25%, transparent 100%);
+}
+.hero-content {
+  position: relative;
+  max-width: 900px;
+  padding: 64px 48px;
+  border-radius: 32px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35), inset 0 1px 0 var(--glass-highlight);
+  animation: appear 1s var(--ease) both;
+}
+.hero-content::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 20%; right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 180, 255, 0.5), transparent);
+}
+@keyframes appear {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 18px;
+  border-radius: 100px;
+  background: rgba(109, 40, 217, 0.12);
+  border: 1px solid rgba(180, 160, 240, 0.2);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--violet-pale);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+}
+.hero-badge::before {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--violet-pale);
+  box-shadow: 0 0 8px var(--violet-pale);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.4; transform: scale(0.7); }
+}
+.hero-title {
+  font-family: var(--ff-display);
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  margin-bottom: 28px;
+}
+.hero-title .mono {
+  font-family: var(--ff-mono);
+  background: linear-gradient(135deg, var(--violet-pale), var(--rose-pale));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.hero-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-dim);
+  max-width: 620px;
+  margin: 0 auto 40px;
+}
+.hero-meta {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  padding-top: 32px;
+  border-top: 1px solid var(--glass-border);
+}
+.hero-meta-item { text-align: center; }
+.hero-meta-value {
+  font-family: var(--ff-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--text), var(--violet-pale));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.hero-meta-label {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.section { padding: 140px 40px; position: relative; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--violet-pale);
+  margin-bottom: 24px;
+  padding: 5px 14px;
+  border-radius: 100px;
+  background: rgba(109, 40, 217, 0.1);
+  border: 1px solid rgba(180, 160, 240, 0.15);
+}
+.section-title {
+  font-family: var(--ff-display);
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  margin-bottom: 24px;
+  max-width: 900px;
+}
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+  max-width: 680px;
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 64px;
+}
+.problem-card {
+  padding: 44px 40px;
+  border-radius: 24px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.4s, transform 0.5s var(--ease);
+}
+.problem-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 20%; right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 180, 255, 0.4), transparent);
+}
+.problem-card:hover {
+  border-color: var(--glass-border-hi);
+  transform: translateY(-4px);
+}
+.problem-card .label {
+  font-family: var(--ff-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--rose-pale);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.problem-card h3 {
+  font-family: var(--ff-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+.problem-card p {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  line-height: 1.75;
+}
+
+.pipeline {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 56px;
+  padding: 48px 40px;
+  border-radius: 28px;
+  background: var(--glass-bg-strong);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);
+  position: relative;
+  overflow: hidden;
+}
+.pipeline::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 20%; right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 180, 255, 0.5), transparent);
+}
+.pipeline-node {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 24px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(180, 160, 240, 0.08);
+  transition: border-color 0.3s, background 0.3s;
+  position: relative;
+  z-index: 1;
+}
+.pipeline-node:hover {
+  border-color: var(--glass-border-hi);
+  background: rgba(139, 92, 246, 0.06);
+}
+.pipeline-node .num {
+  font-family: var(--ff-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-faint);
+  letter-spacing: 0.08em;
+  min-width: 32px;
+}
+.pipeline-node .name {
+  font-family: var(--ff-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  flex: 1;
+}
+.pipeline-node .name.mono { font-family: var(--ff-mono); font-weight: 600; }
+.pipeline-node .role {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.pipeline-arrow {
+  text-align: center;
+  color: var(--violet-pale);
+  font-size: 0.85rem;
+  opacity: 0.5;
+  padding: 2px 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 64px;
+}
+.feature {
+  padding: 40px 32px;
+  border-radius: 22px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.4s, transform 0.5s var(--ease);
+}
+.feature::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 25%; right: 25%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 180, 255, 0.4), transparent);
+}
+.feature:hover {
+  border-color: var(--glass-border-hi);
+  transform: translateY(-6px);
+}
+.feature .icon {
+  font-family: var(--ff-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--violet-pale);
+  letter-spacing: 0.14em;
+  margin-bottom: 24px;
+  display: block;
+}
+.feature h3 {
+  font-family: var(--ff-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.feature p {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  line-height: 1.75;
+}
+
+.code-block {
+  margin-top: 40px;
+  padding: 32px 36px;
+  border-radius: 20px;
+  background: rgba(10, 10, 20, 0.7);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  font-family: var(--ff-mono);
+  font-size: 0.85rem;
+  line-height: 1.9;
+  color: var(--text-dim);
+  overflow-x: auto;
+  position: relative;
+}
+.code-block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 20%; right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 180, 255, 0.35), transparent);
+}
+.code-block .k { color: var(--rose-pale); }
+.code-block .s { color: var(--violet-pale); }
+.code-block .c { color: var(--text-faint); }
+.code-block .ok { color: var(--green); }
+.code-block .no { color: var(--red); }
+
+.comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 56px;
+}
+.comparison-col {
+  padding: 40px 36px;
+  border-radius: 24px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);
+  position: relative;
+  overflow: hidden;
+}
+.comparison-col::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 20%; right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 180, 255, 0.35), transparent);
+}
+.comparison-col.bad { border-color: rgba(252, 165, 165, 0.15); }
+.comparison-col.good { border-color: rgba(110, 231, 183, 0.18); }
+.comparison-col h4 {
+  font-family: var(--ff-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+}
+.comparison-col.bad h4 { color: var(--red); }
+.comparison-col.good h4 { color: var(--green); }
+.comparison-col ul { list-style: none; }
+.comparison-col li {
+  font-size: 0.92rem;
+  color: var(--text-dim);
+  padding: 8px 0;
+  padding-left: 24px;
+  position: relative;
+  line-height: 1.6;
+}
+.comparison-col.bad li::before {
+  content: '×';
+  position: absolute;
+  left: 0;
+  color: var(--red);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.comparison-col.good li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.cta-panel {
+  padding: 80px 60px;
+  border-radius: 32px;
+  background: var(--glass-bg-strong);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4), inset 0 1px 0 var(--glass-highlight);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 20%; right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 180, 255, 0.5), transparent);
+}
+.cta-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(139, 92, 246, 0.12), transparent 60%);
+  pointer-events: none;
+}
+.cta-panel h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+.cta-panel p {
+  font-size: 1rem;
+  color: var(--text-dim);
+  max-width: 520px;
+  margin: 0 auto 36px;
+  line-height: 1.75;
+  position: relative;
+  z-index: 1;
+}
+.cta-panel .btn { position: relative; z-index: 1; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 34px;
+  border-radius: 12px;
+  font-family: var(--ff-body);
+  font-size: 0.94rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+  letter-spacing: 0.01em;
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--violet), var(--violet-soft));
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(109, 40, 217, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.16), transparent);
+  pointer-events: none;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 44px rgba(109, 40, 217, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.footer {
+  padding: 56px 40px 40px;
+  border-top: 1px solid var(--glass-border);
+  background: rgba(11, 11, 20, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: relative;
+  z-index: 1;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer-inner p {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+}
+.footer-inner a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.82rem;
+  transition: color 0.25s;
+}
+.footer-inner a:hover { color: var(--violet-pale); }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s var(--ease), transform 1s var(--ease);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .section { padding: 80px 24px; }
+  .hero { padding: 120px 24px 80px; }
+  .hero-content { padding: 48px 28px; }
+  .problem-grid,
+  .features-grid,
+  .comparison { grid-template-columns: 1fr; }
+  .nav-inner { padding: 0 24px; }
+  .pipeline { padding: 32px 20px; }
+  .pipeline-node { flex-wrap: wrap; gap: 12px; }
+  .pipeline-node .role { width: 100%; }
+  .cta-panel { padding: 56px 28px; }
+  .hero-meta { gap: 32px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Flaut<span>Company</span></a>
+    <a href="index.html" class="nav-back">← Назад на главную</a>
+  </div>
+</nav>
+
+<main>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">FlautSecurity · Криптографический модуль</div>
+    <h1 class="hero-title">
+      <span class="mono">.fsecurity</span><br>
+      — разделение файлов,<br>баз данных и ключей
+    </h1>
+    <p class="hero-subtitle">
+      Отдельный криптографический слой внутри FlautCompany, который хранит
+      ключи отдельно от данных, а данные — отдельно от файлов.
+      Разработан для Flaut Cloud и открыт для подключения к другим проектам.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="hero-meta-value">AES-256</div>
+        <div class="hero-meta-label">GCM-шифрование</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-value">1:1</div>
+        <div class="hero-meta-label">Ключ на файл</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-value">0</div>
+        <div class="hero-meta-label">Ключей в БД</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-label">Проблема</span>
+      <h2 class="section-title">Где хранить ключи,<br>если файлы зашифрованы?</h2>
+      <p class="section-desc">
+        Классическая архитектура кладёт ключи в ту же базу данных,
+        где лежат метаданные о файлах. В результате одна утечка БД
+        компрометирует всю систему. Мы решили эту проблему иначе.
+      </p>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <div class="label">Как обычно</div>
+        <h3>Ключи рядом с данными</h3>
+        <p>
+          Ключи хранятся в БД, конфигурации или секрет-хранилище.
+          Атакующий, получивший доступ к базе, автоматически
+          получает и ключи, и метаданные — то есть всё,
+          что нужно для расшифровки.
+        </p>
+      </div>
+      <div class="problem-card reveal">
+        <div class="label">Как у нас</div>
+        <h3>Ключи отделены от всего</h3>
+        <p>
+          .fsecurity — это отдельный криптографический слой.
+          Ключи не хранятся в базе данных. База не знает о ключах.
+          Хранилище не знает о базе. Файлы не знают о пользователе.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-label">Архитектура</span>
+      <h2 class="section-title">Как работает загрузка</h2>
+      <p class="section-desc">
+        Пользователь отправляет файл в Telegram. Дальше файл проходит
+        через несколько независимых слоёв — прежде чем оказаться
+        в хранилище.
+      </p>
+    </div>
+
+    <div class="pipeline reveal">
+      <div class="pipeline-node">
+        <div class="num">01</div>
+        <div class="name">Telegram</div>
+        <div class="role">Источник</div>
+      </div>
+      <div class="pipeline-arrow">↓</div>
+      <div class="pipeline-node">
+        <div class="num">02</div>
+        <div class="name">Application</div>
+        <div class="role">Логика сервиса</div>
+      </div>
+      <div class="pipeline-arrow">↓</div>
+      <div class="pipeline-node">
+        <div class="num">03</div>
+        <div class="name mono">.fsecurity</div>
+        <div class="role">Криптографический слой</div>
+      </div>
+      <div class="pipeline-arrow">↓</div>
+      <div class="pipeline-node">
+        <div class="num">04</div>
+        <div class="name">AES-256-GCM</div>
+        <div class="role">Алгоритм внутри .fsecurity</div>
+      </div>
+      <div class="pipeline-arrow">↓</div>
+      <div class="pipeline-node">
+        <div class="num">05</div>
+        <div class="name">Зашифрованный файл</div>
+        <div class="role">Шифротекст</div>
+      </div>
+      <div class="pipeline-arrow">↓</div>
+      <div class="pipeline-node">
+        <div class="num">06</div>
+        <div class="name">Storage</div>
+        <div class="role">Изолированное хранилище</div>
+      </div>
+    </div>
+
+    <div class="code-block reveal">
+<span class="c"># Ключ на каждый файл — независимый криптографический секрет</span>
+file A → <span class="k">K1</span>
+file B → <span class="k">K2</span>
+file C → <span class="k">K3</span>
+
+<span class="c"># В БД остаются только метаданные — без ключей</span>
+file_id      <span class="ok">✓</span>
+user_id      <span class="ok">✓</span>
+filename     <span class="ok">✓</span>
+storage_id   <span class="ok">✓</span>
+size         <span class="ok">✓</span>
+created_at   <span class="ok">✓</span>
+
+encryption_key <span class="no">× отсутствует</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-label">Принципы</span>
+      <h2 class="section-title">Что делает .fsecurity<br>устойчивым к утечкам</h2>
+      <p class="section-desc">
+        Не «невзламываемая технология», а архитектура,
+        в которой один украденный компонент не превращается
+        в украденные пользовательские файлы.
+      </p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature reveal">
+        <span class="icon">01</span>
+        <h3>Ключ на каждый файл</h3>
+        <p>
+          .fsecurity генерирует уникальный криптографический ключ
+          для каждого файла. Ключи не вычисляются из user_id,
+          file_id, имени файла или времени — они существуют
+          как независимые случайные секреты.
+        </p>
+      </div>
+      <div class="feature reveal">
+        <span class="icon">02</span>
+        <h3>Случайные storage_id</h3>
+        <p>
+          Каждому файлу назначается криптографически случайный
+          идентификатор хранилища. Ни /users/ivan/passport.pdf,
+          ни /928374/photo.jpg — только непрозрачные хеши,
+          по которым нельзя угадать содержимое.
+        </p>
+      </div>
+      <div class="feature reveal">
+        <span class="icon">03</span>
+        <h3>Изоляция хранилища</h3>
+        <p>
+          Зашифрованные файлы не лежат рядом с БД приложения.
+          Storage — отдельный изолированный сегмент или сервер.
+          Компрометация приложения не даёт автоматического
+          доступа к файлам.
+        </p>
+      </div>
+      <div class="feature reveal">
+        <span class="icon">04</span>
+        <h3>AES-256-GCM</h3>
+        <p>
+          Используется проверенный криптографический примитив,
+          обеспечивающий и конфиденциальность, и проверку
+          целостности. Собственных алгоритмов шифрования
+          здесь нет — и не должно быть.
+        </p>
+      </div>
+      <div class="feature reveal">
+        <span class="icon">05</span>
+        <h3>Не сервер, а модуль</h3>
+        <p>
+          .fsecurity — это Python-модуль без собственного IP,
+          порта и внешнего API. Нет сети — нет лишней
+          поверхности атаки. Криптографическая логика
+          остаётся внутри модуля.
+        </p>
+      </div>
+      <div class="feature reveal">
+        <span class="icon">06</span>
+        <h3>Возможность KMS / HSM</h3>
+        <p>
+          Для инфраструктур с повышенными требованиями .fsecurity
+          может работать с внешним KMS или HSM. Критический
+          ключевой материал выносится за пределы сервера
+          приложения.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-label">Модель угроз</span>
+      <h2 class="section-title">Что произойдёт,<br>если украдут один компонент</h2>
+      <p class="section-desc">
+        Разделение доверия работает не на словах, а в конкретных
+        сценариях компрометации.
+      </p>
+    </div>
+
+    <div class="comparison">
+      <div class="comparison-col bad reveal">
+        <h4>Если украли только БД</h4>
+        <ul>
+          <li>В базе нет ключей шифрования</li>
+          <li>В базе нет содержимого файлов</li>
+          <li>Метаданные не дают доступа к данным</li>
+          <li>Нет математической связи user_id → ключ</li>
+        </ul>
+      </div>
+      <div class="comparison-col good reveal">
+        <h4>Что видит атакующий</h4>
+        <ul>
+          <li>Набор непрозрачных storage_id</li>
+          <li>Шифротекст вместо исходных документов</li>
+          <li>Отсутствие ключей в любом слое</li>
+          <li>Необходимость компрометации сразу нескольких уровней</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="comparison">
+      <div class="comparison-col bad reveal">
+        <h4>Если украли Storage</h4>
+        <ul>
+          <li>Файлы представлены только как .bin</li>
+          <li>Имена и структура не раскрывают содержимое</li>
+          <li>Соответствие user_id → file_id → storage_id отсутствует</li>
+        </ul>
+      </div>
+      <div class="comparison-col good reveal">
+        <h4>Если украли .fsecurity</h4>
+        <ul>
+          <li>Нет самих пользовательских файлов</li>
+          <li>Нет доступа к изолированному Storage</li>
+          <li>Нет сопоставления с метаданными БД</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-label">Расширяемость</span>
+      <h2 class="section-title">От тестового стенда —<br>к самостоятельному решению</h2>
+    </div>
+    <div class="cta-panel reveal">
+      <h2>Испытательный стенд — Flaut Cloud</h2>
+      <p>
+        Для проверки технологии .fsecurity в реальных условиях
+        используется Telegram-бот @flautcloud_bot — облачное хранилище,
+        где отрабатываются загрузка, скачивание, шифрование,
+        ошибки и восстановление после сбоев. В дальнейшем .fsecurity
+        планируется отделить от конкретного бота и сделать
+        самостоятельным решением, подключаемым к другим проектам.
+      </p>
+      <a href="https://t.me/flautcloud_bot" class="btn btn-primary" target="_blank" rel="noopener">
+        Открыть Flaut Cloud →
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© 2024–2025 FlautCompany · Самозанятый Стекольников А.В., ИНН 503818801200</p>
+    <a href="index.html">← Вернуться на главную</a>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal'));
+      const idx = siblings.indexOf(entry.target);
+      const delay = Math.min(Math.max(idx, 0) * 100, 500);
+      setTimeout(() => entry.target.classList.add('visible'), delay);
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
