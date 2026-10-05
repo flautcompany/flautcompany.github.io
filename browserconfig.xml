@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+  <msapplication>
+    <tile>
+      <square70x70logo src="flaut_icon.png"/>
+      <square150x150logo src="flaut_icon.png"/>
+      <square310x310logo src="flaut_icon.png"/>
+      <wide310x150logo src="flaut_icon.png"/>
+      <TileColor>#07070D</TileColor>
+    </tile>
+    <notification>
+      <polling-uri src="https://flautcompany.github.io/notifications.xml"/>
+      <frequency>30</frequency>
+      <cycle>1</cycle>
+    </notification>
+  </msapplication>
+</browserconfig>
