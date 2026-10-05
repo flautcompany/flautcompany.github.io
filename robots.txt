@@ -1,12 +1,31 @@
 User-agent: *
 Allow: /
 Disallow: /flaut_icon.png
-
-Sitemap: https://flautcompany.github.io/sitemap.xml
+Disallow: /*.mp3$
+Disallow: /*?utm_
+Disallow: /*?from=
+Disallow: /*?ref=
 
 User-agent: Yandex
 Allow: /
-Clean-param: utm_source&utm_medium&utm_campaign
+Disallow: /flaut_icon.png
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&from&ref
+Crawl-delay: 2
 
 User-agent: Googlebot
 Allow: /
+Disallow: /flaut_icon.png
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+Sitemap: https://flautcompany.github.io/sitemap.xml
+Host: https://flautcompany.github.io
