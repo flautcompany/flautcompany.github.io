@@ -1,1145 +1,426 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" prefix="og: https://ogp.me/ns#">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="flaut_icon.png">
-<title>FlautCompany — Цифровая экосистема</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="theme-color" content="#07070D">
+<meta name="color-scheme" content="dark">
+<meta name="format-detection" content="telephone=no">
+
+<title>FlautCompany — цифровая экосистема: НейроFlaut, Flaut Cloud, Flaut Pay, BandMate Match</title>
+<meta name="description" content="FlautCompany — официальный сайт цифровой экосистемы: ИИ-ассистент НейроFlaut, облачное хранилище Flaut Cloud с шифрованием .fsecurity, финансовый сервис Flaut Pay и поиск музыкантов BandMate Match. Независимая разработка с 2025 года.">
+<meta name="keywords" content="FlautCompany, Flaut Company, flautcompany, флауткомпани, Flaut, НейроFlaut, нейрофлаут, neuroflaut, Flaut Cloud, флаутклауд, flautcloud, Flaut Pay, флаутпей, flautpay, BandMate Match, bandmate, Flaut Sound, flautsound, .fsecurity, fsecurity, FlautSecurity, flautsecurity, цифровая экосистема, ИИ-ассистент, облачное хранилище, шифрование AES-256-GCM, безопасное облако, экосистема Telegram">
+<meta name="author" content="FlautCompany">
+<meta name="publisher" content="FlautCompany">
+<meta name="copyright" content="FlautCompany">
+<meta name="rating" content="general">
+<meta name="distribution" content="global">
+<meta name="revisit-after" content="3 days">
+<meta name="language" content="Russian">
+<meta name="geo.region" content="RU">
+<meta name="geo.placename" content="Russia">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="yandex" content="index, follow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="FlautCompany">
+<meta name="application-name" content="FlautCompany">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="msapplication-TileColor" content="#07070D">
+<meta name="msapplication-config" content="browserconfig.xml">
+
 <link rel="canonical" href="https://flautcompany.github.io/">
-<meta name="description" content="FlautCompany — цифровая экосистема для бизнеса. Интеграция сервисов, автоматизация процессов и кибербезопасность в одном решении.">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="alternate" hreflang="ru" href="https://flautcompany.github.io/">
+<link rel="alternate" hreflang="ru-RU" href="https://flautcompany.github.io/">
+<link rel="alternate" hreflang="x-default" href="https://flautcompany.github.io/">
+
+<meta name="DC.title" content="FlautCompany — цифровая экосистема">
+<meta name="DC.creator" content="FlautCompany">
+<meta name="DC.subject" content="Цифровая экосистема, ИИ, облачные технологии, финансы, кибербезопасность">
+<meta name="DC.description" content="FlautCompany — экосистема НейроFlaut, Flaut Cloud, Flaut Pay, BandMate Match.">
+<meta name="DC.publisher" content="FlautCompany">
+<meta name="DC.language" content="ru">
+<meta name="DC.type" content="InteractiveResource">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FlautCompany">
+<meta property="og:title" content="FlautCompany — цифровая экосистема: ИИ, облако, финансы">
+<meta property="og:description" content="НейроFlaut, Flaut Cloud с шифрованием .fsecurity, Flaut Pay и BandMate Match — единая среда без фрагментации. Независимая разработка.">
+<meta property="og:url" content="https://flautcompany.github.io/">
+<meta property="og:image" content="https://flautcompany.github.io/flaut_icon.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:image:alt" content="Логотип FlautCompany">
+<meta property="og:locale" content="ru_RU">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FlautCompany — цифровая экосистема">
+<meta name="twitter:description" content="НейроFlaut, Flaut Cloud, Flaut Pay, BandMate Match — в единой среде.">
+<meta name="twitter:image" content="https://flautcompany.github.io/flaut_icon.png">
+<meta name="twitter:image:alt" content="FlautCompany">
+
+<link rel="icon" type="image/png" href="flaut_icon.png">
+<link rel="apple-touch-icon" href="flaut_icon.png">
+<link rel="mask-icon" href="flaut_icon.png" color="#6D28D9">
+<link rel="manifest" href="manifest.json">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Unbounded:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://mc.yandex.ru">
+<link rel="dns-prefetch" href="https://t.me">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Unbounded:wght@300;400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Unbounded:wght@300;400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Unbounded:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://flautcompany.github.io/#organization",
+      "name": "FlautCompany",
+      "legalName": "FlautCompany",
+      "alternateName": ["Flaut Company", "flautcompany", "FlautCo", "Flaut Co", "Flaut", "ФлаутКомпани", "Флаут Компани", "флауткомпани"],
+      "url": "https://flautcompany.github.io/",
+      "logo": {"@type": "ImageObject", "url": "https://flautcompany.github.io/flaut_icon.png", "width": 512, "height": 512},
+      "image": "https://flautcompany.github.io/flaut_icon.png",
+      "description": "FlautCompany — независимая цифровая экосистема: ИИ-ассистент НейроFlaut, облачное хранилище Flaut Cloud с криптографической защитой .fsecurity, финансовый сервис Flaut Pay, поиск музыкантов BandMate Match.",
+      "foundingDate": "2025",
+      "founder": {"@type": "Person", "name": "Алексей Стекольников", "jobTitle": "Основатель и CEO"},
+      "slogan": "Единая цифровая среда без фрагментации",
+      "knowsAbout": ["Искусственный интеллект", "Облачные технологии", "Криптография", "Кибербезопасность", "AES-256-GCM", "Цифровые платежи", "Telegram-боты"],
+      "sameAs": [
+        "https://t.me/flaut_news",
+        "https://t.me/flaut_support",
+        "https://t.me/neuroflaut_bot",
+        "https://t.me/flautcloud_bot",
+        "https://t.me/flautpay_bot",
+        "https://t.me/bandmate_bot",
+        "https://t.me/flautsound_bot"
+      ],
+      "contactPoint": [
+        {"@type": "ContactPoint", "contactType": "customer support", "email": "support@flaut.ru", "url": "https://t.me/flaut_support", "availableLanguage": ["ru", "en"]},
+        {"@type": "ContactPoint", "contactType": "technical support", "email": "support@flaut.ru", "availableLanguage": ["ru"]}
+      ],
+      "address": {"@type": "PostalAddress", "addressCountry": "RU"}
+    },
+    {
+      "@type": "Brand",
+      "@id": "https://flautcompany.github.io/#brand",
+      "name": "FlautCompany",
+      "alternateName": ["Flaut Company", "FlautCo", "flautcompany"],
+      "logo": "https://flautcompany.github.io/flaut_icon.png",
+      "url": "https://flautcompany.github.io/",
+      "description": "Бренд цифровой экосистемы FlautCompany",
+      "slogan": "Всё необходимое — в одном пространстве"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://flautcompany.github.io/#website",
+      "url": "https://flautcompany.github.io/",
+      "name": "FlautCompany",
+      "alternateName": ["Flaut Company", "flautcompany", "ФлаутКомпани"],
+      "description": "Официальный сайт цифровой экосистемы FlautCompany",
+      "publisher": {"@id": "https://flautcompany.github.io/#organization"},
+      "inLanguage": "ru-RU",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {"@type": "EntryPoint", "urlTemplate": "https://flautcompany.github.io/?s={search_term_string}"},
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://flautcompany.github.io/#webpage",
+      "url": "https://flautcompany.github.io/",
+      "name": "FlautCompany — цифровая экосистема",
+      "isPartOf": {"@id": "https://flautcompany.github.io/#website"},
+      "about": {"@id": "https://flautcompany.github.io/#organization"},
+      "primaryImageOfPage": "https://flautcompany.github.io/flaut_icon.png",
+      "inLanguage": "ru-RU"
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://flautcompany.github.io/#products",
+      "name": "Продукты FlautCompany",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "item": {"@type": "SoftwareApplication", "name": "НейроFlaut", "alternateName": ["NeuroFlaut", "нейрофлаут", "neuroflaut"], "applicationCategory": "AIApplication", "operatingSystem": "Telegram", "description": "ИИ-ассистент на собственной модели FlautCompany: генерация текстов, идей, кода и изображений.", "url": "https://t.me/neuroflaut_bot", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB"}}},
+        {"@type": "ListItem", "position": 2, "item": {"@type": "SoftwareApplication", "name": "Flaut Cloud", "alternateName": ["flautcloud", "флаутклауд", "FlautCloud"], "applicationCategory": "CloudStorageApplication", "operatingSystem": "Telegram", "description": "Облачное хранилище с безлимитным объёмом и криптографической защитой .fsecurity (AES-256-GCM).", "url": "https://t.me/flautcloud_bot", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB"}}},
+        {"@type": "ListItem", "position": 3, "item": {"@type": "SoftwareApplication", "name": "Flaut Pay", "alternateName": ["flautpay", "флаутпей"], "applicationCategory": "FinanceApplication", "operatingSystem": "Telegram", "description": "Финансовый центр экосистемы: управление подпиской, история транзакций, чеки.", "url": "https://t.me/flautpay_bot", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB"}}},
+        {"@type": "ListItem", "position": 4, "item": {"@type": "SoftwareApplication", "name": "BandMate Match", "alternateName": ["bandmate", "бэндмейт", "BandMate"], "applicationCategory": "SocialNetworkingApplication", "operatingSystem": "Telegram", "description": "Сервис поиска музыкантов и творческих команд по алгоритму совместимости.", "url": "https://t.me/bandmate_bot", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB"}}},
+        {"@type": "ListItem", "position": 5, "item": {"@type": "SoftwareApplication", "name": "Flaut Sound", "alternateName": ["flautsound", "флаутсаунд"], "applicationCategory": "MusicApplication", "operatingSystem": "Telegram", "description": "Стриминговый сервис для прослушивания и публикации музыки.", "url": "https://t.me/flautsound_bot", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB"}}},
+        {"@type": "ListItem", "position": 6, "item": {"@type": "SoftwareApplication", "name": ".fsecurity", "alternateName": ["fsecurity", "фсекьюрити", "FlautSecurity"], "applicationCategory": "SecurityApplication", "operatingSystem": "Cross-platform", "description": "Криптографический модуль FlautCompany: AES-256-GCM, уникальный ключ на каждый файл, изоляция ключей от БД.", "url": "https://flautcompany.github.io/fsecurity.html", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "RUB"}}}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://flautcompany.github.io/#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Что такое FlautCompany?", "acceptedAnswer": {"@type": "Answer", "text": "FlautCompany — это независимая цифровая экосистема, объединяющая ИИ-ассистента НейроFlaut, облачное хранилище Flaut Cloud с шифрованием .fsecurity, финансовый сервис Flaut Pay, поиск музыкантов BandMate Match и стриминг Flaut Sound. Разрабатывается с 2025 года одной командой."}},
+        {"@type": "Question", "name": "FlautCompany — это официальный сайт?", "acceptedAnswer": {"@type": "Answer", "text": "Да, flautcompany.github.io — официальный сайт FlautCompany. Все продукты доступны через Telegram-боты, ссылки на которые размещены на этом сайте."}},
+        {"@type": "Question", "name": "Какие продукты входят в экосистему FlautCompany?", "acceptedAnswer": {"@type": "Answer", "text": "В экосистему FlautCompany входят: НейроFlaut (ИИ-ассистент), Flaut Cloud (облачное хранилище с шифрованием .fsecurity), Flaut Pay (финансовый сервис), BandMate Match (поиск музыкантов), Flaut Sound (музыкальный стриминг) и FlautSecurity (отдел кибербезопасности)."}},
+        {"@type": "Question", "name": "Сколько стоит подписка FlautCompany?", "acceptedAnswer": {"@type": "Answer", "text": "Тарифы FlautCompany: MUSIC — 499 ₽/мес, LITE — 799 ₽/мес, PRO — 899 ₽/мес. При годовой оплате действует скидка ~16%. Базовый функционал доступен бесплатно."}},
+        {"@type": "Question", "name": "Безопасны ли данные в Flaut Cloud?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Все файлы в Flaut Cloud шифруются криптографическим модулем .fsecurity по алгоритму AES-256-GCM. Ключи хранятся отдельно от базы данных и отдельно от файлов — компрометация одного слоя не даёт доступа к пользовательским данным."}},
+        {"@type": "Question", "name": "Как начать пользоваться FlautCompany?", "acceptedAnswer": {"@type": "Answer", "text": "Откройте Telegram-бот @flautpay_bot, нажмите «Старт» и выберите нужный продукт. Регистрация не требуется — авторизация через Telegram-аккаунт. Бесплатный доступ открыт сразу."}},
+        {"@type": "Question", "name": "Чем FlautCompany отличается от других экосистем?", "acceptedAnswer": {"@type": "Answer", "text": "FlautCompany — независимая разработка без внешних инвестиций. Собственная ИИ-модель, собственные серверы, собственный криптографический модуль .fsecurity. Мы не продаём данные, не показываем рекламу и не зависим от сторонних гигантов."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://flautcompany.github.io/#breadcrumb",
+      "itemListElement": [{"@type": "ListItem", "position": 1, "name": "FlautCompany", "item": "https://flautcompany.github.io/"}]
+    }
+  ]
+}
+</script>
+
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --bg:         #07070D;
-  --bg-soft:    #0B0B14;
-  --bg-elev:    #11111D;
-  --text:       #F2EFFA;
-  --text-dim:   #A5A0C0;
-  --text-faint: #5D5878;
-  --violet:      #6D28D9;
-  --violet-soft: #8B5CF6;
-  --violet-pale: #B8A5F5;
-  --rose-soft:   #C084FC;
-  --rose-pale:   #E0C4FE;
-  --glass-bg:        rgba(22, 22, 42, 0.45);
-  --glass-bg-strong: rgba(26, 26, 48, 0.62);
-  --glass-border:    rgba(180, 160, 240, 0.14);
-  --glass-border-hi: rgba(200, 180, 255, 0.28);
-  --glass-highlight: rgba(255, 255, 255, 0.06);
-  --glass-shadow:    0 8px 32px rgba(0, 0, 0, 0.35);
-  --glass-blur:      blur(24px) saturate(140%);
-  --ff-display: 'Unbounded', sans-serif;
-  --ff-body:    'Manrope', sans-serif;
-  --ease: cubic-bezier(0.16, 1, 0.3, 1);
-}
-html { scroll-behavior: smooth; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--ff-body);
-  font-size: 16px;
-  line-height: 1.7;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  position: relative;
-}
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background:
-    radial-gradient(circle at 20% 15%, rgba(109, 40, 217, 0.14) 0%, transparent 45%),
-    radial-gradient(circle at 85% 70%, rgba(192, 132, 252, 0.08) 0%, transparent 45%),
-    radial-gradient(circle at 50% 100%, rgba(139, 92, 246, 0.07) 0%, transparent 50%);
-}
-main, nav, footer { position: relative; z-index: 1; }
-::selection { background: var(--violet); color: #fff; }
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--violet); border-radius: 3px; }
-
-/* GLASS */
-.glass {
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);
-  position: relative;
-  overflow: hidden;
-}
-.glass::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(200, 180, 255, 0.35) 50%, transparent 100%);
-  pointer-events: none;
-}
-
-/* MUSIC */
-.music-toggle {
-  position: fixed;
-  bottom: 32px; right: 32px;
-  z-index: 900;
-  width: 52px; height: 52px;
-  border-radius: 50%;
-  background: var(--glass-bg-strong);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);
-  color: var(--violet-pale);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: border-color 0.3s, transform 0.3s var(--ease), box-shadow 0.3s;
-}
-.music-toggle:hover {
-  border-color: var(--glass-border-hi);
-  transform: scale(1.06);
-  box-shadow: 0 12px 40px rgba(109, 40, 217, 0.3), inset 0 1px 0 var(--glass-highlight);
-}
-.music-toggle svg { width: 20px; height: 20px; }
-.music-toggle.playing .music-waves { animation: waves 1.6s ease-in-out infinite; }
-@keyframes waves {
-  0%, 100% { opacity: 0.4; }
-  50%      { opacity: 1; }
-}
-
-/* NAV */
-.nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 800;
-  height: 76px;
-  display: flex;
-  align-items: center;
-  transition: background 0.4s, border-color 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
-  border-bottom: 1px solid transparent;
-}
-.nav.scrolled {
-  background: rgba(11, 11, 20, 0.55);
-  backdrop-filter: blur(28px) saturate(160%);
-  -webkit-backdrop-filter: blur(28px) saturate(160%);
-  border-bottom-color: var(--glass-border);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), inset 0 1px 0 var(--glass-highlight);
-}
-.nav-inner {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.nav-logo {
-  font-family: var(--ff-display);
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  color: var(--text);
-  text-decoration: none;
-  display: flex;
-  align-items: baseline;
-}
-.nav-logo span {
-  background: linear-gradient(135deg, var(--violet-pale), var(--rose-soft));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.nav-links {
-  display: flex;
-  gap: 40px;
-  list-style: none;
-}
-.nav-links a {
-  font-size: 0.88rem;
-  font-weight: 500;
-  color: var(--text-dim);
-  text-decoration: none;
-  position: relative;
-  transition: color 0.25s;
-}
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -8px; left: 0;
-  width: 0; height: 1px;
-  background: var(--violet-pale);
-  transition: width 0.4s var(--ease);
-}
-.nav-links a:hover { color: var(--text); }
-.nav-links a:hover::after { width: 100%; }
-.nav-cta {
-  padding: 10px 22px;
-  border-radius: 10px;
-  background: var(--glass-bg-strong);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  box-shadow: inset 0 1px 0 var(--glass-highlight);
-  color: var(--violet-pale);
-  font-size: 0.82rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s var(--ease);
-}
-.nav-cta:hover {
-  border-color: var(--glass-border-hi);
-  background: rgba(139, 92, 246, 0.18);
-  transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(109, 40, 217, 0.25), inset 0 1px 0 var(--glass-highlight);
-}
-
-/* HERO */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 160px 40px 120px;
-  overflow: hidden;
-}
-.hero-bg { position: absolute; inset: 0; pointer-events: none; }
-.hero-bg::before {
-  content: '';
-  position: absolute;
-  width: 1200px; height: 1200px;
-  top: -500px;
-  left: calc(50% - 600px);
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(109, 40, 217, 0.22) 0%, transparent 60%);
-  animation: drift 18s ease-in-out infinite;
-}
-.hero-bg::after {
-  content: '';
-  position: absolute;
-  width: 800px; height: 800px;
-  bottom: -300px;
-  right: -200px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(192, 132, 252, 0.12) 0%, transparent 62%);
-  animation: drift 22s ease-in-out infinite reverse;
-}
-@keyframes drift {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50%      { transform: translate(40px, -50px) scale(1.06); }
-}
-.hero-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(109, 40, 217, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(109, 40, 217, 0.035) 1px, transparent 1px);
-  background-size: 88px 88px;
-  mask-image: radial-gradient(ellipse 70% 65% at 50% 45%, #000 25%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 70% 65% at 50% 45%, #000 25%, transparent 100%);
-}
-.hero-content {
-  position: relative;
-  text-align: center;
-  max-width: 960px;
-  padding: 64px 48px;
-  border-radius: 32px;
-  background: rgba(22, 22, 42, 0.28);
-  backdrop-filter: blur(20px) saturate(140%);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid rgba(180, 160, 240, 0.1);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-}
-.hero-content::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 20%; right: 20%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(200, 180, 255, 0.4) 50%, transparent 100%);
-}
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 7px 18px;
-  border-radius: 100px;
-  background: rgba(109, 40, 217, 0.12);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(180, 160, 240, 0.18);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: var(--violet-pale);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  margin-bottom: 44px;
-  animation: appear 1s var(--ease) both;
-}
-.hero-badge::before {
-  content: '';
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: var(--violet-pale);
-  box-shadow: 0 0 8px var(--violet-pale);
-  animation: pulse 2.4s ease-in-out infinite;
-}
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%      { opacity: 0.35; transform: scale(0.7); }
-}
-.hero-title {
-  font-family: var(--ff-display);
-  font-size: clamp(2.6rem, 7vw, 5.4rem);
-  font-weight: 800;
-  line-height: 1.04;
-  letter-spacing: -0.045em;
-  margin-bottom: 36px;
-  animation: appear 1s var(--ease) 0.1s both;
-}
-.hero-title .accent {
-  background: linear-gradient(135deg, var(--violet-pale) 0%, var(--rose-pale) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.hero-subtitle {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: var(--text-dim);
-  max-width: 600px;
-  margin: 0 auto 56px;
-  animation: appear 1s var(--ease) 0.2s both;
-}
-.hero-actions {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-  animation: appear 1s var(--ease) 0.3s both;
-}
-@keyframes appear {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 16px 34px;
-  border-radius: 12px;
-  font-family: var(--ff-body);
-  font-size: 0.94rem;
-  font-weight: 600;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s var(--ease);
-  letter-spacing: 0.01em;
-  position: relative;
-  overflow: hidden;
-}
-.btn-primary {
-  background: linear-gradient(135deg, var(--violet), var(--violet-soft));
-  color: #fff;
-  box-shadow: 0 8px 24px rgba(109, 40, 217, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 50%;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.16), transparent);
-  pointer-events: none;
-}
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 44px rgba(109, 40, 217, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25);
-}
-.btn-ghost {
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  color: var(--text);
-  border: 1px solid var(--glass-border);
-  box-shadow: inset 0 1px 0 var(--glass-highlight);
-}
-.btn-ghost:hover {
-  border-color: var(--glass-border-hi);
-  background: rgba(139, 92, 246, 0.12);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 32px rgba(109, 40, 217, 0.2), inset 0 1px 0 var(--glass-highlight);
-}
-.scroll-hint {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  color: var(--text-faint);
-  font-size: 0.65rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  animation: appear 1s var(--ease) 0.7s both;
-}
-.scroll-hint-line {
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, var(--glass-border-hi), transparent);
-  animation: scroll-line 2.4s ease-in-out infinite;
-}
-@keyframes scroll-line {
-  0%, 100% { opacity: 0.3; transform: scaleY(1); }
-  50%      { opacity: 1;   transform: scaleY(0.5); }
-}
-
-/* SECTIONS */
-.section { padding: 160px 40px; position: relative; }
-.section-inner { max-width: 1280px; margin: 0 auto; }
-.section-label {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--violet-pale);
-  margin-bottom: 24px;
-  padding: 5px 14px;
-  border-radius: 100px;
-  background: rgba(109, 40, 217, 0.1);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(180, 160, 240, 0.15);
-}
-.section-title {
-  font-family: var(--ff-display);
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.035em;
-  margin-bottom: 24px;
-  max-width: 900px;
-}
-.section-desc {
-  font-size: 1.05rem;
-  color: var(--text-dim);
-  line-height: 1.8;
-  max-width: 620px;
-}
-
-/* MANIFESTO */
-.manifesto-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-top: 80px;
-}
-.manifesto-item {
-  padding: 48px 32px 40px;
-  border-radius: 24px;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);
-  position: relative;
-  overflow: hidden;
-  transition: border-color 0.4s, transform 0.5s var(--ease), box-shadow 0.4s;
-}
-.manifesto-item::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 20%; right: 20%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(200, 180, 255, 0.4), transparent);
-}
-.manifesto-item::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.1), transparent 60%);
-  pointer-events: none;
-}
-.manifesto-item:hover {
-  border-color: var(--glass-border-hi);
-  transform: translateY(-6px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(109, 40, 217, 0.15), inset 0 1px 0 var(--glass-highlight);
-}
-.manifesto-num {
-  font-family: var(--ff-display);
-  font-size: clamp(2.6rem, 5vw, 4rem);
-  font-weight: 800;
-  letter-spacing: -0.05em;
-  line-height: 1;
-  background: linear-gradient(135deg, var(--text) 0%, var(--violet-pale) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 1;
-}
-.manifesto-item:nth-child(2) .manifesto-num {
-  background: linear-gradient(135deg, var(--violet-pale) 0%, var(--rose-pale) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.manifesto-item:nth-child(3) .manifesto-num {
-  background: linear-gradient(135deg, var(--rose-soft) 0%, var(--rose-pale) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.manifesto-item:nth-child(4) .manifesto-num {
-  background: linear-gradient(135deg, var(--violet-soft) 0%, var(--violet-pale) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.manifesto-label {
-  font-family: var(--ff-display);
-  font-size: 0.92rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  margin-bottom: 10px;
-  color: var(--text);
-  position: relative;
-  z-index: 1;
-}
-.manifesto-desc {
-  font-size: 0.85rem;
-  color: var(--text-dim);
-  line-height: 1.65;
-  position: relative;
-  z-index: 1;
-}
-
-/* STORY */
-.story-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 120px;
-  align-items: start;
-  margin-top: 80px;
-}
-.story-left {
-  position: sticky;
-  top: 120px;
-  padding: 40px 36px;
-  border-radius: 24px;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);
-}
-.story-left::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 20%; right: 20%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(200, 180, 255, 0.4), transparent);
-}
-.story-left p {
-  font-size: 1.15rem;
-  line-height: 1.75;
-  color: var(--text);
-  font-weight: 400;
-  margin-bottom: 24px;
-}
-.story-left p:first-child {
-  font-family: var(--ff-display);
-  font-size: 1.35rem;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.5;
-  margin-bottom: 32px;
-}
-.story-left p:last-child {
-  font-size: 0.95rem;
-  color: var(--text-dim);
-  margin-bottom: 0;
-}
-.story-right p {
-  color: var(--text-dim);
-  font-size: 1rem;
-  line-height: 1.85;
-  margin-bottom: 24px;
-}
-.story-right p strong {
-  color: var(--text);
-  font-weight: 600;
-}
-.story-signature {
-  margin-top: 40px;
-  padding: 24px 28px;
-  border-radius: 20px;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-.story-signature-avatar {
-  width: 56px; height: 56px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--violet), var(--rose-soft));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--ff-display);
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: #fff;
-  flex-shrink: 0;
-  box-shadow: 0 8px 24px rgba(109, 40, 217, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  position: relative;
-}
-.story-signature-avatar::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), transparent 50%);
-  pointer-events: none;
-}
-.story-signature-name {
-  font-family: var(--ff-display);
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-.story-signature-role {
-  font-size: 0.8rem;
-  color: var(--text-faint);
-  margin-top: 2px;
-}
-
-/* PRODUCTS */
-.products-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-top: 80px;
-}
-.product-card {
-  position: relative;
-  padding: 56px 48px;
-  border-radius: 28px;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);
-  min-height: 340px;
-  display: flex;
-  flex-direction: column;
-  transition: border-color 0.4s, transform 0.5s var(--ease), box-shadow 0.5s;
-  overflow: hidden;
-}
-.product-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 15%; right: 15%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(200, 180, 255, 0.4), transparent);
-}
-.product-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.08), transparent 55%);
-  pointer-events: none;
-  transition: opacity 0.5s;
-  opacity: 0.6;
-}
-.product-card:hover {
-  border-color: var(--glass-border-hi);
-  transform: translateY(-6px);
-  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.45), 0 0 60px rgba(109, 40, 217, 0.2), inset 0 1px 0 var(--glass-highlight);
-}
-.product-card:hover::after { opacity: 1; }
-.product-index {
-  font-family: var(--ff-display);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: var(--text-faint);
-  margin-bottom: 24px;
-  position: relative;
-  z-index: 1;
-}
-.product-name {
-  font-family: var(--ff-display);
-  font-size: 1.75rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  margin-bottom: 16px;
-  line-height: 1.15;
-  position: relative;
-  z-index: 1;
-}
-.product-desc {
-  font-size: 0.95rem;
-  color: var(--text-dim);
-  line-height: 1.7;
-  margin-bottom: 32px;
-  flex: 1;
-  position: relative;
-  z-index: 1;
-}
-.product-meta {
-  display: flex;
-  gap: 32px;
-  padding-top: 24px;
-  border-top: 1px solid var(--glass-border);
-  position: relative;
-  z-index: 1;
-  flex-wrap: wrap;
-}
-.product-meta-item {
-  display: flex;
-  flex-direction: column;
-}
-.product-meta-value {
-  font-family: var(--ff-display);
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--violet-pale);
-  margin-bottom: 4px;
-}
-.product-meta-label {
-  font-size: 0.72rem;
-  color: var(--text-faint);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-/* PRINCIPLES */
-.principles-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 80px;
-}
-.principle {
-  padding: 44px 36px;
-  border-radius: 24px;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);
-  position: relative;
-  overflow: hidden;
-  transition: border-color 0.4s, transform 0.5s var(--ease), box-shadow 0.4s;
-}
-.principle::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 20%; right: 20%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(200, 180, 255, 0.4), transparent);
-}
-.principle::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.09), transparent 55%);
-  pointer-events: none;
-}
-.principle:hover {
-  border-color: var(--glass-border-hi);
-  transform: translateY(-6px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(109, 40, 217, 0.15), inset 0 1px 0 var(--glass-highlight);
-}
-.principle-index {
-  font-family: var(--ff-display);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: var(--violet-pale);
-  margin-bottom: 24px;
-  position: relative;
-  z-index: 1;
-}
-.principle-title {
-  font-family: var(--ff-display);
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 14px;
-  line-height: 1.3;
-  position: relative;
-  z-index: 1;
-}
-.principle-desc {
-  font-size: 0.9rem;
-  color: var(--text-dim);
-  line-height: 1.75;
-  position: relative;
-  z-index: 1;
-}
-
-/* QUOTE */
-.quote-panel {
-  padding: 80px 60px;
-  border-radius: 32px;
-  background: var(--glass-bg-strong);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4), inset 0 1px 0 var(--glass-highlight);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.quote-panel::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 20%; right: 20%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(200, 180, 255, 0.45), transparent);
-}
-.quote-panel::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 30%, rgba(139, 92, 246, 0.12), transparent 60%);
-  pointer-events: none;
-}
-.quote-mark {
-  font-family: var(--ff-display);
-  font-size: 5rem;
-  font-weight: 800;
-  line-height: 1;
-  background: linear-gradient(135deg, var(--violet), var(--rose-soft));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 24px;
-  opacity: 0.7;
-  position: relative;
-  z-index: 1;
-}
-.quote-text {
-  font-family: var(--ff-display);
-  font-size: clamp(1.4rem, 3vw, 2.2rem);
-  font-weight: 500;
-  line-height: 1.35;
-  letter-spacing: -0.025em;
-  max-width: 900px;
-  margin: 0 auto 40px;
-  position: relative;
-  z-index: 1;
-}
-.quote-author {
-  font-size: 0.88rem;
-  color: var(--text-dim);
-  letter-spacing: 0.02em;
-  position: relative;
-  z-index: 1;
-}
-.quote-author strong { color: var(--text); font-weight: 600; }
-
-/* CONTACT */
-.contact-block {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 100px;
-  align-items: center;
-  margin-top: 72px;
-}
-.contact-links {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.contact-link {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 28px;
-  border-radius: 18px;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  box-shadow: inset 0 1px 0 var(--glass-highlight);
-  text-decoration: none;
-  transition: all 0.4s var(--ease);
-  position: relative;
-  overflow: hidden;
-}
-.contact-link::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 30%; right: 30%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(200, 180, 255, 0.3), transparent);
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-.contact-link:hover {
-  border-color: var(--glass-border-hi);
-  padding-left: 36px;
-  padding-right: 36px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 0 32px rgba(109, 40, 217, 0.15), inset 0 1px 0 var(--glass-highlight);
-}
-.contact-link:hover::before { opacity: 1; }
-.contact-link-label {
-  font-size: 0.78rem;
-  color: var(--text-faint);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-.contact-link-value {
-  font-family: var(--ff-display);
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--violet-pale);
-  letter-spacing: -0.01em;
-}
-.contact-cta-block {
-  padding: 44px 40px;
-  border-radius: 28px;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);
-  position: relative;
-  overflow: hidden;
-}
-.contact-cta-block::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 20%; right: 20%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(200, 180, 255, 0.4), transparent);
-}
-.contact-cta-block::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.1), transparent 55%);
-  pointer-events: none;
-}
-.contact-cta-block .section-desc {
-  margin-bottom: 36px;
-  position: relative;
-  z-index: 1;
-}
-.contact-cta-block .btn {
-  position: relative;
-  z-index: 1;
-}
-
-/* FOOTER */
-.footer {
-  padding: 72px 40px 48px;
-  border-top: 1px solid var(--glass-border);
-  background: rgba(11, 11, 20, 0.4);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  position: relative;
-  z-index: 1;
-}
-.footer-inner {
-  max-width: 1280px;
-  margin: 0 auto;
-}
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 64px;
-  margin-bottom: 56px;
-  flex-wrap: wrap;
-}
-.footer-logo {
-  font-family: var(--ff-display);
-  font-size: 1.4rem;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  color: var(--text);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: baseline;
-  margin-bottom: 16px;
-}
-.footer-logo span {
-  background: linear-gradient(135deg, var(--violet-pale), var(--rose-soft));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.footer-tagline {
-  font-size: 0.88rem;
-  color: var(--text-dim);
-  max-width: 280px;
-  line-height: 1.7;
-}
-.footer-cols {
-  display: flex;
-  gap: 80px;
-  flex-wrap: wrap;
-}
-.footer-col-title {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-  margin-bottom: 20px;
-}
-.footer-col a {
-  display: block;
-  font-size: 0.88rem;
-  color: var(--text-dim);
-  text-decoration: none;
-  padding: 5px 0;
-  transition: color 0.25s;
-}
-.footer-col a:hover { color: var(--violet-pale); }
-.footer-bottom {
-  padding-top: 32px;
-  border-top: 1px solid var(--glass-border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  font-size: 0.78rem;
-  color: var(--text-faint);
-}
-.footer-bottom a {
-  color: var(--text-dim);
-  text-decoration: none;
-  transition: color 0.25s;
-}
-.footer-bottom a:hover { color: var(--violet-pale); }
-
-/* REVEAL */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s var(--ease), transform 1s var(--ease);
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .manifesto-grid { grid-template-columns: 1fr 1fr; }
-  .story-layout { grid-template-columns: 1fr; gap: 56px; }
-  .story-left { position: static; }
-  .principles-grid { grid-template-columns: 1fr; gap: 16px; }
-  .contact-block { grid-template-columns: 1fr; gap: 40px; }
-}
-@media (max-width: 900px) {
-  .nav-links { display: none; }
-  .nav-inner { padding: 0 24px; }
-  .section { padding: 100px 24px; }
-  .hero { padding: 120px 24px 80px; }
-  .hero-content { padding: 48px 28px; }
-  .products-grid { grid-template-columns: 1fr; }
-  .product-card { min-height: auto; padding: 40px 32px; }
-}
-@media (max-width: 600px) {
-  .hero-title { font-size: 2.2rem; }
-  .manifesto-grid { grid-template-columns: 1fr; }
-  .footer-top { flex-direction: column; gap: 40px; }
-  .footer-cols { gap: 40px; }
-  .footer-bottom { flex-direction: column; text-align: center; }
-  .music-toggle { bottom: 20px; right: 20px; width: 44px; height: 44px; }
-  .quote-panel { padding: 56px 28px; }
-  .contact-cta-block { padding: 32px 24px; }
-  .contact-link { padding: 20px 24px; }
-}
+:root{--bg:#07070D;--bg-soft:#0B0B14;--bg-elev:#11111D;--text:#F2EFFA;--text-dim:#A5A0C0;--text-faint:#5D5878;--violet:#6D28D9;--violet-soft:#8B5CF6;--violet-pale:#B8A5F5;--rose-soft:#C084FC;--rose-pale:#E0C4FE;--glass-bg:rgba(22,22,42,0.45);--glass-bg-strong:rgba(26,26,48,0.62);--glass-border:rgba(180,160,240,0.14);--glass-border-hi:rgba(200,180,255,0.28);--glass-highlight:rgba(255,255,255,0.06);--glass-shadow:0 8px 32px rgba(0,0,0,0.35);--glass-blur:blur(24px) saturate(140%);--ff-display:'Unbounded',sans-serif;--ff-body:'Manrope',sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{background:var(--bg);color:var(--text);font-family:var(--ff-body);font-size:16px;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;position:relative;}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(circle at 20% 15%,rgba(109,40,217,0.14) 0%,transparent 45%),radial-gradient(circle at 85% 70%,rgba(192,132,252,0.08) 0%,transparent 45%),radial-gradient(circle at 50% 100%,rgba(139,92,246,0.07) 0%,transparent 50%);}
+main,nav,footer{position:relative;z-index:1;}
+::selection{background:var(--violet);color:#fff;}
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--violet);border-radius:3px;}
+.music-toggle{position:fixed;bottom:32px;right:32px;z-index:900;width:52px;height:52px;border-radius:50%;background:var(--glass-bg-strong);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:1px solid var(--glass-border);box-shadow:var(--glass-shadow),inset 0 1px 0 var(--glass-highlight);color:var(--violet-pale);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color 0.3s,transform 0.3s var(--ease),box-shadow 0.3s;}
+.music-toggle:hover{border-color:var(--glass-border-hi);transform:scale(1.06);box-shadow:0 12px 40px rgba(109,40,217,0.3),inset 0 1px 0 var(--glass-highlight);}
+.music-toggle svg{width:20px;height:20px;}
+.music-toggle.playing .music-waves{animation:waves 1.6s ease-in-out infinite;}
+@keyframes waves{0%,100%{opacity:0.4;}50%{opacity:1;}}
+.nav{position:fixed;top:0;left:0;right:0;z-index:800;height:76px;display:flex;align-items:center;transition:background 0.4s,border-color 0.4s,backdrop-filter 0.4s,box-shadow 0.4s;border-bottom:1px solid transparent;}
+.nav.scrolled{background:rgba(11,11,20,0.55);backdrop-filter:blur(28px) saturate(160%);-webkit-backdrop-filter:blur(28px) saturate(160%);border-bottom-color:var(--glass-border);box-shadow:0 8px 32px rgba(0,0,0,0.25),inset 0 1px 0 var(--glass-highlight);}
+.nav-inner{width:100%;max-width:1280px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--ff-display);font-size:1.25rem;font-weight:800;letter-spacing:-0.04em;color:var(--text);text-decoration:none;display:flex;align-items:baseline;}
+.nav-logo span{background:linear-gradient(135deg,var(--violet-pale),var(--rose-soft));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.nav-links{display:flex;gap:40px;list-style:none;}
+.nav-links a{font-size:0.88rem;font-weight:500;color:var(--text-dim);text-decoration:none;position:relative;transition:color 0.25s;}
+.nav-links a::after{content:'';position:absolute;bottom:-8px;left:0;width:0;height:1px;background:var(--violet-pale);transition:width 0.4s var(--ease);}
+.nav-links a:hover{color:var(--text);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{padding:10px 22px;border-radius:10px;background:var(--glass-bg-strong);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:1px solid var(--glass-border);box-shadow:inset 0 1px 0 var(--glass-highlight);color:var(--violet-pale);font-size:0.82rem;font-weight:600;text-decoration:none;transition:all 0.3s var(--ease);}
+.nav-cta:hover{border-color:var(--glass-border-hi);background:rgba(139,92,246,0.18);transform:translateY(-1px);box-shadow:0 8px 24px rgba(109,40,217,0.25),inset 0 1px 0 var(--glass-highlight);}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:160px 40px 120px;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;pointer-events:none;}
+.hero-bg::before{content:'';position:absolute;width:1200px;height:1200px;top:-500px;left:calc(50% - 600px);border-radius:50%;background:radial-gradient(circle,rgba(109,40,217,0.22) 0%,transparent 60%);animation:drift 18s ease-in-out infinite;}
+.hero-bg::after{content:'';position:absolute;width:800px;height:800px;bottom:-300px;right:-200px;border-radius:50%;background:radial-gradient(circle,rgba(192,132,252,0.12) 0%,transparent 62%);animation:drift 22s ease-in-out infinite reverse;}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(40px,-50px) scale(1.06);}}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(109,40,217,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(109,40,217,0.035) 1px,transparent 1px);background-size:88px 88px;mask-image:radial-gradient(ellipse 70% 65% at 50% 45%,#000 25%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 70% 65% at 50% 45%,#000 25%,transparent 100%);}
+.hero-content{position:relative;text-align:center;max-width:960px;padding:64px 48px;border-radius:32px;background:rgba(22,22,42,0.28);backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(180,160,240,0.1);box-shadow:0 24px 80px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,255,255,0.05);}
+.hero-content::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(200,180,255,0.4) 50%,transparent 100%);}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;padding:7px 18px;border-radius:100px;background:rgba(109,40,217,0.12);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(180,160,240,0.18);box-shadow:inset 0 1px 0 rgba(255,255,255,0.06);font-size:0.7rem;font-weight:600;color:var(--violet-pale);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:44px;animation:appear 1s var(--ease) both;}
+.hero-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--violet-pale);box-shadow:0 0 8px var(--violet-pale);animation:pulse 2.4s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.35;transform:scale(0.7);}}
+.hero-title{font-family:var(--ff-display);font-size:clamp(2.6rem,7vw,5.4rem);font-weight:800;line-height:1.04;letter-spacing:-0.045em;margin-bottom:36px;animation:appear 1s var(--ease) 0.1s both;}
+.hero-title .accent{background:linear-gradient(135deg,var(--violet-pale) 0%,var(--rose-pale) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-subtitle{font-size:1.1rem;line-height:1.8;color:var(--text-dim);max-width:600px;margin:0 auto 56px;animation:appear 1s var(--ease) 0.2s both;}
+.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:appear 1s var(--ease) 0.3s both;}
+@keyframes appear{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 34px;border-radius:12px;font-family:var(--ff-body);font-size:0.94rem;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:all 0.3s var(--ease);letter-spacing:0.01em;position:relative;overflow:hidden;}
+.btn-primary{background:linear-gradient(135deg,var(--violet),var(--violet-soft));color:#fff;box-shadow:0 8px 24px rgba(109,40,217,0.3),inset 0 1px 0 rgba(255,255,255,0.2);}
+.btn-primary::before{content:'';position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(to bottom,rgba(255,255,255,0.16),transparent);pointer-events:none;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 44px rgba(109,40,217,0.4),inset 0 1px 0 rgba(255,255,255,0.25);}
+.btn-ghost{background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);color:var(--text);border:1px solid var(--glass-border);box-shadow:inset 0 1px 0 var(--glass-highlight);}
+.btn-ghost:hover{border-color:var(--glass-border-hi);background:rgba(139,92,246,0.12);transform:translateY(-2px);box-shadow:0 10px 32px rgba(109,40,217,0.2),inset 0 1px 0 var(--glass-highlight);}
+.scroll-hint{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--text-faint);font-size:0.65rem;letter-spacing:0.24em;text-transform:uppercase;animation:appear 1s var(--ease) 0.7s both;}
+.scroll-hint-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--glass-border-hi),transparent);animation:scroll-line 2.4s ease-in-out infinite;}
+@keyframes scroll-line{0%,100%{opacity:0.3;transform:scaleY(1);}50%{opacity:1;transform:scaleY(0.5);}}
+.section{padding:160px 40px;position:relative;}
+.section-inner{max-width:1280px;margin:0 auto;}
+.section-label{display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--violet-pale);margin-bottom:24px;padding:5px 14px;border-radius:100px;background:rgba(109,40,217,0.1);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(180,160,240,0.15);}
+.section-title{font-family:var(--ff-display);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:-0.035em;margin-bottom:24px;max-width:900px;}
+.section-desc{font-size:1.05rem;color:var(--text-dim);line-height:1.8;max-width:620px;}
+.manifesto-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:80px;}
+.manifesto-item{padding:48px 32px 40px;border-radius:24px;background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:1px solid var(--glass-border);box-shadow:var(--glass-shadow),inset 0 1px 0 var(--glass-highlight);position:relative;overflow:hidden;transition:border-color 0.4s,transform 0.5s var(--ease),box-shadow 0.4s;}
+.manifesto-item::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,180,255,0.4),transparent);}
+.manifesto-item::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(139,92,246,0.1),transparent 60%);pointer-events:none;}
+.manifesto-item:hover{border-color:var(--glass-border-hi);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 40px rgba(109,40,217,0.15),inset 0 1px 0 var(--glass-highlight);}
+.manifesto-num{font-family:var(--ff-display);font-size:clamp(2.6rem,5vw,4rem);font-weight:800;letter-spacing:-0.05em;line-height:1;background:linear-gradient(135deg,var(--text) 0%,var(--violet-pale) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;position:relative;z-index:1;}
+.manifesto-item:nth-child(2) .manifesto-num{background:linear-gradient(135deg,var(--violet-pale) 0%,var(--rose-pale) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.manifesto-item:nth-child(3) .manifesto-num{background:linear-gradient(135deg,var(--rose-soft) 0%,var(--rose-pale) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.manifesto-item:nth-child(4) .manifesto-num{background:linear-gradient(135deg,var(--violet-soft) 0%,var(--violet-pale) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.manifesto-label{font-family:var(--ff-display);font-size:0.92rem;font-weight:600;letter-spacing:-0.01em;margin-bottom:10px;color:var(--text);position:relative;z-index:1;}
+.manifesto-desc{font-size:0.85rem;color:var(--text-dim);line-height:1.65;position:relative;z-index:1;}
+.story-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:120px;align-items:start;margin-top:80px;}
+.story-left{position:sticky;top:120px;padding:40px 36px;border-radius:24px;background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:1px solid var(--glass-border);box-shadow:var(--glass-shadow),inset 0 1px 0 var(--glass-highlight);}
+.story-left::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,180,255,0.4),transparent);}
+.story-left p{font-size:1.15rem;line-height:1.75;color:var(--text);font-weight:400;margin-bottom:24px;}
+.story-left p:first-child{font-family:var(--ff-display);font-size:1.35rem;font-weight:500;letter-spacing:-0.02em;line-height:1.5;margin-bottom:32px;}
+.story-left p:last-child{font-size:0.95rem;color:var(--text-dim);margin-bottom:0;}
+.story-right p{color:var(--text-dim);font-size:1rem;line-height:1.85;margin-bottom:24px;}
+.story-right p strong{color:var(--text);font-weight:600;}
+.story-signature{margin-top:40px;padding:24px 28px;border-radius:20px;background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:1px solid var(--glass-border);box-shadow:var(--glass-shadow),inset 0 1px 0 var(--glass-highlight);display:flex;align-items:center;gap:20px;}
+.story-signature-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--rose-soft));display:flex;align-items:center;justify-content:center;font-family:var(--ff-display);font-size:1.1rem;font-weight:800;color:#fff;flex-shrink:0;box-shadow:0 8px 24px rgba(109,40,217,0.35),inset 0 1px 0 rgba(255,255,255,0.25);position:relative;}
+.story-signature-avatar::after{content:'';position:absolute;inset:0;border-radius:50%;background:linear-gradient(to bottom,rgba(255,255,255,0.2),transparent 50%);pointer-events:none;}
+.story-signature-name{font-family:var(--ff-display);font-size:0.95rem;font-weight:700;letter-spacing:-0.01em;}
+.story-signature-role{font-size:0.8rem;color:var(--text-faint);margin-top:2px;}
+.products-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:80px;}
+.product-card{position:relative;padding:56px 48px;border-radius:28px;background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:1px solid var(--glass-border);box-shadow:var(--glass-shadow),inset 0 1px 0 var(--glass-highlight);min-height:340px;display:flex;flex-direction:column;transition:border-color 0.4s,transform 0.5s var(--ease),box-shadow 0.5s;overflow:hidden;}
+.product-card::before{content:'';position:absolute;top:0;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,180,255,0.4),transparent);}
+.product-card::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(139,92,246,0.08),transparent 55%);pointer-events:none;transition:opacity 0.5s;opacity:0.6;}
+.product-card:hover{border-color:var(--glass-border-hi);transform:translateY(-6px);box-shadow:0 28px 80px rgba(0,0,0,0.45),0 0 60px rgba(109,40,217,0.2),inset 0 1px 0 var(--glass-highlight);}
+.product-card:hover::after{opacity:1;}
+.product-index{font-family:var(--ff-display);font-size:0.72rem;font-weight:700;letter-spacing:0.14em;color:var(--text-faint);margin-bottom:24px;position:relative;z-index:1;}
+.product-name{font-family:var(--ff-display);font-size:1.75rem;font-weight:700;letter-spacing:-0.03em;margin-bottom:16px;line-height:1.15;position:relative;z-index:1;}
+.product-desc{font-size:0.95rem;color:var(--text-dim);line-height:1.7;margin-bottom:32px;flex:1;position:relative;z-index:1;}
+.product-meta{display:flex;gap:32px;padding-top:24px;border-top:1px solid var(--glass-border);position:relative;z-index:1;flex-wrap:wrap;}
+.product-meta-item{display:flex;flex-direction:column;}
+.product-meta-value{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;letter-spacing:-0.02em;color:var(--violet-pale);margin-bottom:4px;}
+.product-meta-label{font-size:0.72rem;color:var(--text-faint);letter-spacing:0.06em;text-transform:uppercase;}
+.principles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:80px;}
+.principle{padding:44px 36px;border-radius:24px;background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:1px solid var(--glass-border);box-shadow:var(--glass-shadow),inset 0 1px 0 var(--glass-highlight);position:relative;overflow:hidden;transition:border-color 0.4s,transform 0.5s var(--ease),box-shadow 0.4s;}
+.principle::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,180,255,0.4),transparent);}
+.principle::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(139,92,246,0.09),transparent 55%);pointer-events:none;}
+.principle:hover{border-color:var(--glass-border-hi);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 40px rgba(109,40,217,0.15),inset 0 1px 0 var(--glass-highlight);}
+.principle-index{font-family:var(--ff-display);font-size:0.72rem;font-weight:700;letter-spacing:0.14em;color:var(--violet-pale);margin-bottom:24px;position:relative;z-index:1;}
+.principle-title{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:14px;line-height:1.3;position:relative;z-index:1;}
+.principle-desc{font-size:0.9rem;color:var(--text-dim);line-height:1.75;position:relative;z-index:1;}
+.quote-panel{padding:80px 60px;border-radius:32px;background:var(--glass-bg-strong);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:1px solid var(--glass-border);box-shadow:0 24px 80px rgba(0,0,0,0.4),inset 0 1px 0 var(--glass-highlight);text-align:center;position:relative;overflow:hidden;}
+.quote-panel::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,180,255,0.45),transparent);}
+.quote-panel::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,rgba(139,92,246,0.12),transparent 60%);pointer-events:none;}
+.quote-mark{font-family:var(--ff-display);font-size:5rem;font-weight:800;line-height:1;background:linear-gradient(135deg,var(--violet),var(--rose-soft));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:24px;opacity:0.7;position:relative;z-index:1;}
+.quote-text{font-family:var(--ff-display);font-size:clamp(1.4rem,3vw,2.2rem);font-weight:500;line-height:1.35;letter-spacing:-0.025em;max-width:900px;margin:0 auto 40px;position:relative;z-index:1;}
+.quote-author{font-size:0.88rem;color:var(--text-dim);letter-spacing:0.02em;position:relative;z-index:1;}
+.quote-author strong{color:var(--text);font-weight:600;}
+.contact-block{display:grid;grid-template-columns:1.1fr 1fr;gap:100px;align-items:center;margin-top:72px;}
+.contact-links{display:flex;flex-direction:column;gap:12px;}
+.contact-link{display:flex;justify-content:space-between;align-items:center;padding:24px 28px;border-radius:18px;background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:1px solid var(--glass-border);box-shadow:inset 0 1px 0 var(--glass-highlight);text-decoration:none;transition:all 0.4s var(--ease);position:relative;overflow:hidden;}
+.contact-link::before{content:'';position:absolute;top:0;left:30%;right:30%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,180,255,0.3),transparent);opacity:0;transition:opacity 0.4s;}
+.contact-link:hover{border-color:var(--glass-border-hi);padding-left:36px;padding-right:36px;box-shadow:0 12px 40px rgba(0,0,0,0.3),0 0 32px rgba(109,40,217,0.15),inset 0 1px 0 var(--glass-highlight);}
+.contact-link:hover::before{opacity:1;}
+.contact-link-label{font-size:0.78rem;color:var(--text-faint);letter-spacing:0.14em;text-transform:uppercase;}
+.contact-link-value{font-family:var(--ff-display);font-size:1.05rem;font-weight:600;color:var(--violet-pale);letter-spacing:-0.01em;}
+.contact-cta-block{padding:44px 40px;border-radius:28px;background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:1px solid var(--glass-border);box-shadow:var(--glass-shadow),inset 0 1px 0 var(--glass-highlight);position:relative;overflow:hidden;}
+.contact-cta-block::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,180,255,0.4),transparent);}
+.contact-cta-block::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(139,92,246,0.1),transparent 55%);pointer-events:none;}
+.contact-cta-block .section-desc{margin-bottom:36px;position:relative;z-index:1;}
+.contact-cta-block .btn{position:relative;z-index:1;}
+.footer{padding:72px 40px 48px;border-top:1px solid var(--glass-border);background:rgba(11,11,20,0.4);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:relative;z-index:1;}
+.footer-inner{max-width:1280px;margin:0 auto;}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:64px;margin-bottom:56px;flex-wrap:wrap;}
+.footer-logo{font-family:var(--ff-display);font-size:1.4rem;font-weight:800;letter-spacing:-0.04em;color:var(--text);text-decoration:none;display:inline-flex;align-items:baseline;margin-bottom:16px;}
+.footer-logo span{background:linear-gradient(135deg,var(--violet-pale),var(--rose-soft));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.footer-tagline{font-size:0.88rem;color:var(--text-dim);max-width:280px;line-height:1.7;}
+.footer-cols{display:flex;gap:80px;flex-wrap:wrap;}
+.footer-col-title{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-faint);margin-bottom:20px;}
+.footer-col a{display:block;font-size:0.88rem;color:var(--text-dim);text-decoration:none;padding:5px 0;transition:color 0.25s;}
+.footer-col a:hover{color:var(--violet-pale);}
+.footer-bottom{padding-top:32px;border-top:1px solid var(--glass-border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:0.78rem;color:var(--text-faint);}
+.footer-bottom a{color:var(--text-dim);text-decoration:none;transition:color 0.25s;}
+.footer-bottom a:hover{color:var(--violet-pale);}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}.hero-bg::before,.hero-bg::after,.hero-badge::before,.scroll-hint-line{animation:none;}}
+@media (max-width:1024px){.manifesto-grid{grid-template-columns:1fr 1fr;}.story-layout{grid-template-columns:1fr;gap:56px;}.story-left{position:static;}.principles-grid{grid-template-columns:1fr;gap:16px;}.contact-block{grid-template-columns:1fr;gap:40px;}}
+@media (max-width:900px){.nav-links{display:none;}.nav-inner{padding:0 24px;}.section{padding:100px 24px;}.hero{padding:120px 24px 80px;}.hero-content{padding:48px 28px;}.products-grid{grid-template-columns:1fr;}.product-card{min-height:auto;padding:40px 32px;}}
+@media (max-width:600px){.hero-title{font-size:2.2rem;}.manifesto-grid{grid-template-columns:1fr;}.footer-top{flex-direction:column;gap:40px;}.footer-cols{gap:40px;}.footer-bottom{flex-direction:column;text-align:center;}.music-toggle{bottom:20px;right:20px;width:44px;height:44px;}.quote-panel{padding:56px 28px;}.contact-cta-block{padding:32px 24px;}.contact-link{padding:20px 24px;}}
 </style>
 </head>
 <body>
 
-<audio id="bgMusic" loop preload="auto">
+<audio id="bgMusic" loop preload="none">
   <source src="sound_for_flaut.mp3" type="audio/mpeg">
 </audio>
 
-<button class="music-toggle" id="musicToggle" aria-label="Музыка">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+<button class="music-toggle" id="musicToggle" aria-label="Включить фоновую музыку FlautCompany">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
     <path class="music-waves" d="M9 18V5l12-2v13"/>
     <circle cx="6" cy="18" r="3"/>
     <circle cx="18" cy="16" r="3"/>
   </svg>
 </button>
 
-<nav class="nav" id="nav">
+<header>
+<nav class="nav" id="nav" aria-label="Основная навигация">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">Flaut<span>Company</span></a>
+    <a href="#" class="nav-logo" aria-label="FlautCompany — на главную">Flaut<span>Company</span></a>
     <ul class="nav-links">
       <li><a href="#story">История</a></li>
       <li><a href="#products">Продукты</a></li>
       <li><a href="#principles">Принципы</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Контакты</a></li>
     </ul>
     <a href="https://t.me/flautpay_bot" class="nav-cta" target="_blank" rel="noopener">Открыть в Telegram</a>
   </div>
 </nav>
+</header>
 
 <main>
 
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
   <div class="hero-content">
-    <div class="hero-badge">Цифровая экосистема</div>
-    <h1 class="hero-title">
-      Всё необходимое —<br>
-      <span class="accent">в одном пространстве.</span>
+    <div class="hero-badge">Цифровая экосистема FlautCompany</div>
+    <h1 class="hero-title" id="hero-title">
+      FlautCompany —<br>
+      <span class="accent">всё необходимое в одном пространстве.</span>
     </h1>
     <p class="hero-subtitle">
       FlautCompany объединяет искусственный интеллект, облачные технологии
       и финансовые инструменты в единую среду — без фрагментации и лишних переходов.
+      НейроFlaut, Flaut Cloud, Flaut Pay и BandMate Match работают как один организм.
     </p>
     <div class="hero-actions">
       <a href="https://t.me/flautpay_bot" class="btn btn-primary" target="_blank" rel="noopener">Начать бесплатно</a>
       <a href="#story" class="btn btn-ghost">Узнать больше</a>
     </div>
   </div>
-  <div class="scroll-hint">
+  <div class="scroll-hint" aria-hidden="true">
     <span>Листайте</span>
     <div class="scroll-hint-line"></div>
   </div>
 </section>
 
-<section class="section" id="story">
+<section class="section manifesto" aria-labelledby="manifesto-title">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-label">FlautCompany в цифрах</span>
+      <h2 class="section-title" id="manifesto-title">Небольшая команда.<br>Большие амбиции.</h2>
+      <p class="section-desc">
+        FlautCompany — не корпорация с тысячами сотрудников. Это независимая команда,
+        которая строит инфраструктуру для цифровой жизни с 2025 года.
+      </p>
+    </div>
+    <div class="manifesto-grid">
+      <div class="manifesto-item reveal">
+        <div class="manifesto-num">04</div>
+        <div class="manifesto-label">Продукта в экосистеме</div>
+        <div class="manifesto-desc">ИИ-ассистент, облако, кошелёк и поиск команды — в единой среде.</div>
+      </div>
+      <div class="manifesto-item reveal">
+        <div class="manifesto-num">∞</div>
+        <div class="manifesto-label">Облачное хранилище</div>
+        <div class="manifesto-desc">Безлимитное хранилище с криптографической защитой .fsecurity.</div>
+      </div>
+      <div class="manifesto-item reveal">
+        <div class="manifesto-num">2025</div>
+        <div class="manifesto-label">Год основания компании</div>
+        <div class="manifesto-desc">Молодой проект с ясной миссией и долгосрочной стратегией.</div>
+      </div>
+      <div class="manifesto-item reveal">
+        <div class="manifesto-num">100%</div>
+        <div class="manifesto-label">Независимая инфраструктура</div>
+        <div class="manifesto-desc">Собственная ИИ-модель, собственные серверы, собственный код.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="story" aria-labelledby="story-title">
   <div class="section-inner">
     <div class="reveal">
       <span class="section-label">История</span>
-      <h2 class="section-title">Почему мы это делаем</h2>
+      <h2 class="section-title" id="story-title">Почему FlautCompany это делает</h2>
     </div>
     <div class="story-layout">
-      
-      <!-- Левая колонка: только текст -->
       <div class="story-left reveal">
         <p>«Мы устали переключаться между десятками приложений, чтобы сделать простую вещь.»</p>
         <p>
@@ -1149,8 +430,6 @@ main, nav, footer { position: relative; z-index: 1; }
           от сторонних гигантов.
         </p>
       </div>
-
-      <!-- Правая колонка: длинный текст + подпись -->
       <div class="story-right reveal">
         <p>
           <strong>В 2025 году</strong> мы запустили FlautCompany как независимую
@@ -1159,7 +438,7 @@ main, nav, footer { position: relative; z-index: 1; }
           а не существует в вакууме.
         </p>
         <p>
-          Сегодня в экосистеме четыре продукта: НейроFlaut — ИИ-ассистент
+          Сегодня в экосистеме FlautCompany четыре продукта: НейроFlaut — ИИ-ассистент
           на собственной модели; Flaut Cloud — облачное хранилище
           с безлимитным объёмом; Flaut Pay — единый финансовый центр;
           и BandMate Match — сервис для поиска творческих команд,
@@ -1177,9 +456,7 @@ main, nav, footer { position: relative; z-index: 1; }
           криптографические модули. Один из них, <strong>.fsecurity</strong>,
           уже защищает пользовательские файлы в Flaut Cloud.
         </p>
-
-        <!-- Блок подписи под текстом правой колонки -->
-        <div class="story-signature" style="margin-top: 40px;">
+        <div class="story-signature">
           <div class="story-signature-avatar">АС</div>
           <div>
             <div class="story-signature-name">Алексей Стекольников</div>
@@ -1188,28 +465,23 @@ main, nav, footer { position: relative; z-index: 1; }
         </div>
       </div>
     </div>
-
-    <!-- Фото под левой колонкой, вне её границ -->
-    <div class="reveal" style="margin-top: 32px; max-width: 420px;">
-      <img src="i_am_ceo.jpg" alt="Алексей Стекольников — основатель и CEO FlautCompany"
-           style="display: block; width: 100%; height: auto; border-radius: 20px; border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);">
-    </div>
   </div>
 </section>
-<section class="section products" id="products">
+
+<section class="section products" id="products" aria-labelledby="products-title">
   <div class="section-inner">
     <div class="reveal">
-      <span class="section-label">Экосистема</span>
-      <h2 class="section-title">Четыре продукта.<br>Одна система.</h2>
+      <span class="section-label">Экосистема FlautCompany</span>
+      <h2 class="section-title" id="products-title">Четыре продукта.<br>Одна система.</h2>
       <p class="section-desc">
         Всё интегрировано с самого начала — не склеено вместе,
         а спроектировано как единый организм.
       </p>
     </div>
     <div class="products-grid">
-      <div class="product-card reveal">
+      <article class="product-card reveal">
         <div class="product-index">01 / ИИ-ассистент</div>
-        <div class="product-name">НейроFlaut</div>
+        <h3 class="product-name">НейроFlaut</h3>
         <p class="product-desc">
           Интеллектуальный ассистент на собственной модели FlautCompany.
           Генерация текстов, идей, кода и визуальных материалов —
@@ -1230,11 +502,11 @@ main, nav, footer { position: relative; z-index: 1; }
             <div class="product-meta-label">Платформа</div>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="product-card reveal">
+      <article class="product-card reveal">
         <div class="product-index">02 / Облако</div>
-        <div class="product-name">Flaut Cloud</div>
+        <h3 class="product-name">Flaut Cloud</h3>
         <p class="product-desc">
           Надёжное облачное хранилище для документов, проектов,
           медиа и бэкапов. Мгновенный шеринг прямо из Telegram,
@@ -1255,13 +527,13 @@ main, nav, footer { position: relative; z-index: 1; }
             <div class="product-meta-label">Алгоритм</div>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="product-card reveal">
+      <article class="product-card reveal">
         <div class="product-index">03 / Финансы</div>
-        <div class="product-name">Flaut Pay</div>
+        <h3 class="product-name">Flaut Pay</h3>
         <p class="product-desc">
-          Финансовый центр всей экосистемы. Единая подписка
+          Финансовый центр всей экосистемы FlautCompany. Единая подписка
           на все продукты, история транзакций, управление
           тарифом и мгновенные уведомления — всё в одном
           интерфейсе внутри Telegram.
@@ -1280,11 +552,11 @@ main, nav, footer { position: relative; z-index: 1; }
             <div class="product-meta-label">Мониторинг</div>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="product-card reveal">
+      <article class="product-card reveal">
         <div class="product-index">04 / Сообщество · Скоро</div>
-        <div class="product-name">BandMate Match</div>
+        <h3 class="product-name">BandMate Match</h3>
         <p class="product-desc">
           Умный поиск партнёров, музыкантов и творческих команд
           по навыкам, интересам и целям. Алгоритм совместимости,
@@ -1305,58 +577,58 @@ main, nav, footer { position: relative; z-index: 1; }
             <div class="product-meta-label">Статус</div>
           </div>
         </div>
-      </div>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="section" id="principles">
+<section class="section" id="principles" aria-labelledby="principles-title">
   <div class="section-inner">
     <div class="reveal">
-      <span class="section-label">Принципы</span>
-      <h2 class="section-title">Как мы работаем</h2>
+      <span class="section-label">Принципы FlautCompany</span>
+      <h2 class="section-title" id="principles-title">Как мы работаем</h2>
       <p class="section-desc">
         Три принципа, которые определяют каждое наше решение —
         от архитектуры продукта до текста в интерфейсе.
       </p>
     </div>
     <div class="principles-grid">
-      <div class="principle reveal">
+      <article class="principle reveal">
         <div class="principle-index">01</div>
-        <div class="principle-title">Фокус на пользователе</div>
+        <h3 class="principle-title">Фокус на пользователе</h3>
         <p class="principle-desc">
           Каждое решение проходит проверку: делает ли оно жизнь
           человека проще. Мы не добавляем функции ради функций
           и не усложняем то, что можно сделать проще.
         </p>
-      </div>
-      <div class="principle reveal">
+      </article>
+      <article class="principle reveal">
         <div class="principle-index">02</div>
-        <div class="principle-title">Независимость инфраструктуры</div>
+        <h3 class="principle-title">Независимость инфраструктуры</h3>
         <p class="principle-desc">
           Собственная ИИ-модель, собственный код, собственная
           архитектура. Мы не зависим от сторонних гигантов
           и строим технологии, которые останутся под нашим
           контролем.
         </p>
-      </div>
-      <div class="principle reveal">
+      </article>
+      <article class="principle reveal">
         <div class="principle-index">03</div>
-        <div class="principle-title">Честность и прозрачность</div>
+        <h3 class="principle-title">Честность и прозрачность</h3>
         <p class="principle-desc">
           Понятные условия, открытая документация, отсутствие
           скрытых платежей и мелкого шрифта. Пользователь
           всегда знает, за что платит и что получает.
         </p>
-      </div>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="section quote-section">
+<section class="section quote-section" aria-label="Цитата основателя">
   <div class="section-inner">
     <div class="quote-panel reveal">
-      <div class="quote-mark">«</div>
+      <div class="quote-mark" aria-hidden="true">«</div>
       <blockquote class="quote-text">
         Мы строим не набор инструментов, а единую цифровую среду —
         там, где технологии работают на человека, а не наоборот.
@@ -1368,11 +640,49 @@ main, nav, footer { position: relative; z-index: 1; }
   </div>
 </section>
 
-<section class="section" id="contact">
+<section class="section" id="faq" aria-labelledby="faq-title">
   <div class="section-inner">
     <div class="reveal">
-      <span class="section-label">Контакты</span>
-      <h2 class="section-title">Всегда на связи</h2>
+      <span class="section-label">Частые вопросы</span>
+      <h2 class="section-title" id="faq-title">FAQ о FlautCompany</h2>
+      <p class="section-desc">
+        Ответы на популярные вопросы о компании, продуктах и безопасности.
+      </p>
+    </div>
+    <div class="principles-grid" style="margin-top:56px;grid-template-columns:1fr 1fr;">
+      <article class="principle reveal">
+        <h3 class="principle-title">Что такое FlautCompany?</h3>
+        <p class="principle-desc">FlautCompany — независимая цифровая экосистема, объединяющая ИИ-ассистента НейроFlaut, облачное хранилище Flaut Cloud с шифрованием .fsecurity, финансовый сервис Flaut Pay, поиск музыкантов BandMate Match и стриминг Flaut Sound.</p>
+      </article>
+      <article class="principle reveal">
+        <h3 class="principle-title">FlautCompany — это официальный сайт?</h3>
+        <p class="principle-desc">Да, flautcompany.github.io — официальный сайт FlautCompany. Все продукты доступны через Telegram-боты, ссылки на которые размещены на этом сайте.</p>
+      </article>
+      <article class="principle reveal">
+        <h3 class="principle-title">Сколько стоит подписка?</h3>
+        <p class="principle-desc">Тарифы FlautCompany: MUSIC — 499 ₽/мес, LITE — 799 ₽/мес, PRO — 899 ₽/мес. При годовой оплате действует скидка ~16%. Базовый функционал доступен бесплатно.</p>
+      </article>
+      <article class="principle reveal">
+        <h3 class="principle-title">Безопасны ли данные в Flaut Cloud?</h3>
+        <p class="principle-desc">Да. Все файлы шифруются криптографическим модулем .fsecurity по алгоритму AES-256-GCM. Ключи хранятся отдельно от БД и отдельно от файлов — компрометация одного слоя не даёт доступа к данным.</p>
+      </article>
+      <article class="principle reveal">
+        <h3 class="principle-title">Как начать пользоваться?</h3>
+        <p class="principle-desc">Откройте Telegram-бот @flautpay_bot, нажмите «Старт» и выберите нужный продукт. Регистрация не требуется — авторизация через Telegram-аккаунт.</p>
+      </article>
+      <article class="principle reveal">
+        <h3 class="principle-title">Чем FlautCompany отличается?</h3>
+        <p class="principle-desc">Независимая разработка без внешних инвестиций. Собственная ИИ-модель, собственные серверы, собственный криптографический модуль .fsecurity. Мы не продаём данные и не показываем рекламу.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact" aria-labelledby="contact-title">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-label">Контакты FlautCompany</span>
+      <h2 class="section-title" id="contact-title">Всегда на связи</h2>
     </div>
     <div class="contact-block">
       <div class="contact-links reveal">
@@ -1391,11 +701,11 @@ main, nav, footer { position: relative; z-index: 1; }
       </div>
       <div class="contact-cta-block reveal">
         <p class="section-desc">
-          Начните пользоваться экосистемой прямо сейчас —
+          Начните пользоваться экосистемой FlautCompany прямо сейчас —
           бесплатно и без ввода карты. Или напишите нам,
           если есть вопрос или идея.
         </p>
-        <a href="https://t.me/flautpay_bot" class="btn btn-primary" target="_blank" rel="noopener" style="margin-top: 8px;">
+        <a href="https://t.me/flautpay_bot" class="btn btn-primary" target="_blank" rel="noopener" style="margin-top:8px;">
           Начать в Telegram
         </a>
       </div>
@@ -1409,7 +719,7 @@ main, nav, footer { position: relative; z-index: 1; }
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <a href="#" class="footer-logo">Flaut<span>Company</span></a>
+        <a href="#" class="footer-logo" aria-label="FlautCompany">Flaut<span>Company</span></a>
         <p class="footer-tagline">
           Цифровая экосистема для профессионалов и творческих команд.
           Независимая разработка с 2025 года.
@@ -1421,12 +731,14 @@ main, nav, footer { position: relative; z-index: 1; }
           <a href="https://t.me/neuroflaut_bot" target="_blank" rel="noopener">НейроFlaut</a>
           <a href="https://t.me/flautcloud_bot" target="_blank" rel="noopener">Flaut Cloud</a>
           <a href="https://t.me/flautpay_bot" target="_blank" rel="noopener">Flaut Pay</a>
-          <a href="https://t.me/flaut_news" target="_blank" rel="noopener">BandMate Match</a>
+          <a href="https://t.me/bandmate_bot" target="_blank" rel="noopener">BandMate Match</a>
+          <a href="https://t.me/flautsound_bot" target="_blank" rel="noopener">Flaut Sound</a>
         </div>
         <div class="footer-col">
           <div class="footer-col-title">Компания</div>
           <a href="#story">История</a>
           <a href="#principles">Принципы</a>
+          <a href="#faq">FAQ</a>
           <a href="#contact">Контакты</a>
           <a href="fsecurity.html">.fsecurity</a>
           <a href="flautsecurity.html">FlautSecurity</a>
@@ -1449,66 +761,26 @@ main, nav, footer { position: relative; z-index: 1; }
 </footer>
 
 <script>
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-}, { passive: true });
-
-const io = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal'));
-      const idx = siblings.indexOf(entry.target);
-      const delay = Math.min(Math.max(idx, 0) * 100, 500);
-      setTimeout(() => entry.target.classList.add('visible'), delay);
-      io.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-const music = document.getElementById('bgMusic');
-const musicBtn = document.getElementById('musicToggle');
-music.volume = 0;
-function fadeVolume(target, duration = 1400) {
-  const start = music.volume;
-  const t0 = performance.now();
-  function step(now) {
-    const p = Math.min((now - t0) / duration, 1);
-    music.volume = start + (target - start) * p;
-    if (p < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-function tryPlay() {
-  music.play().then(() => {
-    musicBtn.classList.add('playing');
-    fadeVolume(0.3);
-  }).catch(() => {});
-}
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40)},{passive:true});
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const s=Array.from(e.target.parentElement.querySelectorAll('.reveal'));const d=Math.min(Math.max(s.indexOf(e.target),0)*100,500);setTimeout(()=>e.target.classList.add('visible'),d);io.unobserve(e.target)}})},{threshold:0.12,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const music=document.getElementById('bgMusic');
+const musicBtn=document.getElementById('musicToggle');
+music.volume=0;
+function fadeVolume(t,d=1400){const s=music.volume,t0=performance.now();function step(n){const p=Math.min((n-t0)/d,1);music.volume=s+(t-s)*p;if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
+function tryPlay(){music.play().then(()=>{musicBtn.classList.add('playing');fadeVolume(0.3);}).catch(()=>{});}
 tryPlay();
-function firstInteraction() {
-  if (music.paused) tryPlay();
-  document.removeEventListener('click', firstInteraction);
-  document.removeEventListener('touchstart', firstInteraction);
-  document.removeEventListener('keydown', firstInteraction);
-}
-document.addEventListener('click', firstInteraction);
-document.addEventListener('touchstart', firstInteraction);
-document.addEventListener('keydown', firstInteraction);
-musicBtn.addEventListener('click', (e) => {
-  e.stopPropagation();
-  if (music.paused) {
-    music.play().then(() => {
-      musicBtn.classList.add('playing');
-      fadeVolume(0.3);
-    });
-  } else {
-    fadeVolume(0, 400);
-    setTimeout(() => music.pause(), 400);
-    musicBtn.classList.remove('playing');
-  }
-});
+function firstInteraction(){if(music.paused)tryPlay();removeEventListener('click',firstInteraction);removeEventListener('touchstart',firstInteraction);removeEventListener('keydown',firstInteraction);}
+addEventListener('click',firstInteraction);addEventListener('touchstart',firstInteraction);addEventListener('keydown',firstInteraction);
+musicBtn.addEventListener('click',e=>{e.stopPropagation();if(music.paused){music.play().then(()=>{musicBtn.classList.add('playing');fadeVolume(0.3);});}else{fadeVolume(0,400);setTimeout(()=>music.pause(),400);musicBtn.classList.remove('playing');}});
 </script>
+
+<script>
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
+ym(XXXXXXXX,'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute;left:-9999px;" alt=""></div></noscript>
+
 </body>
 </html>
