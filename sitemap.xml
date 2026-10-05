@@ -1,14 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
   <url>
     <loc>https://flautcompany.github.io/</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://flautcompany.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flautcompany.github.io/"/>
+    <image:image>
+      <image:loc>https://flautcompany.github.io/flaut_icon.png</image:loc>
+      <image:title>FlautCompany — логотип</image:title>
+    </image:image>
   </url>
+
   <url>
     <loc>https://flautcompany.github.io/fsecurity.html</loc>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
-    <lastmod>2025-01-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://flautcompany.github.io/fsecurity.html"/>
   </url>
+
+  <url>
+    <loc>https://flautcompany.github.io/flautsecurity.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://flautcompany.github.io/pricing.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://flautcompany.github.io/support.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://flautcompany.github.io/oferta.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://flautcompany.github.io/privacy.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://flautcompany.github.io/consent.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>
