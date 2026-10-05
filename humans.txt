@@ -1,0 +1,26 @@
+/* TEAM */
+FlautCompany
+Founder: Алексей Стекольников
+Contact: support@flaut.ru
+Telegram: @flaut_support
+Location: Russia
+
+/* SITE */
+Last update: 2025/01/01
+Language: Russian
+Doctype: HTML5
+Standards: HTML5, CSS3
+Components: Vanilla JS, Google Fonts, Yandex Metrika
+Software: VSCode, Python, Telegram Bot API
+
+/* PRODUCTS */
+НейроFlaut — https://t.me/neuroflaut_bot
+Flaut Cloud — https://t.me/flautcloud_bot
+Flaut Pay — https://t.me/flautpay_bot
+BandMate Match — https://t.me/bandmate_bot
+Flaut Sound — https://t.me/flautsound_bot
+.fsecurity — https://flautcompany.github.io/fsecurity.html
+
+/* SECURITY */
+Found a vulnerability? Email: support@flaut.ru (subject: SECURITY)
+PGP available upon request.
