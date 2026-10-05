@@ -1,0 +1,61 @@
+{
+  "name": "FlautCompany — цифровая экосистема",
+  "short_name": "FlautCompany",
+  "description": "НейроFlaut, Flaut Cloud, Flaut Pay, BandMate Match — единая цифровая среда без фрагментации.",
+  "lang": "ru",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#07070D",
+  "theme_color": "#6D28D9",
+  "categories": ["business", "productivity", "utilities", "security"],
+  "icons": [
+    {
+      "src": "flaut_icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "flaut_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "flaut_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Flaut Cloud",
+      "short_name": "Cloud",
+      "description": "Открыть облачное хранилище Flaut Cloud",
+      "url": "https://t.me/flautcloud_bot"
+    },
+    {
+      "name": "НейроFlaut",
+      "short_name": "Нейро",
+      "description": "Открыть ИИ-ассистента НейроFlaut",
+      "url": "https://t.me/neuroflaut_bot"
+    },
+    {
+      "name": ".fsecurity",
+      "short_name": ".fsec",
+      "description": "Криптографический модуль .fsecurity",
+      "url": "/fsecurity.html"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://flautcompany.github.io/"
+    }
+  ],
+  "prefer_related_applications": false
+}
